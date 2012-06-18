@@ -63,7 +63,6 @@
 		
 		function logout()
 		{
-			header('X-Frame-Options: GOFORIT'); 
 			$this->facebook->logout();
 			redirect('facebook_test');
 		}
