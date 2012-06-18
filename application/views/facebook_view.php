@@ -50,6 +50,7 @@
 	</head>
 	<body>
 		<div class="my-account">
+		
 		<?php if ( !$this->facebook->logged_in() ): ?>
 			<a href="<?php echo $this->facebook->login_url()?>">Login</a>
 			<fb:facepile></fb:facepile>
@@ -63,14 +64,22 @@
 				<?php var_dump($result);?>
 			</pre>
 		<?php endif;?>
+
+		<?php
+		echo $this->config->item('base_url')
+		?>
+
 		</div>
+		
 		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+		
+		<script src="https://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			FB.init({appId: '<?php echo facebook_app_id()?>', status: true, cookie: true, xfbml: true});
 			FB.Event.subscribe('auth.login', function(response) {
 				window.location.reload();
 			});
 		</script>
+
 	</body>
 </html>
