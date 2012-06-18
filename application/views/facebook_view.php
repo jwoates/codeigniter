@@ -1,4 +1,4 @@
-<?php header('Content-type: text/html; charset=UTF-8'); ?>
+<?php //header('Content-type: text/html; charset=UTF-8'); ?>
 <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php echo facebook_xmlns()?>>
@@ -71,15 +71,32 @@
 
 		</div>
 		
-		<div id="fb-root"></div>
-		
-		<script src="https://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			FB.init({appId: '<?php echo facebook_app_id()?>', status: true, cookie: true, xfbml: true});
-			FB.Event.subscribe('auth.login', function(response) {
-				window.location.reload();
-			});
-		</script>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '<?php echo facebook_app_id()?>', // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
 
 	</body>
 </html>
+
+
+
+
