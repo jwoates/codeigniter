@@ -54,7 +54,8 @@
 		<?php if ( !$this->facebook->logged_in() ): ?>
 			<a href="<?php echo $this->facebook->login_url()?>">Login</a>
 			<fb:facepile></fb:facepile>
-		<?php else:?>
+		<?php else: /*?>
+
 			<img class="avatar" src="<?php echo facebook_picture('me')?>" />
 			<?php $user = $this->facebook->user();?>
 			<h2><?php echo $user->name?> ( <a href="<?php echo site_url('facebook_test/logout')?>">Logout</a> )</h2>
@@ -63,10 +64,10 @@
 			<pre>
 				<?php var_dump($result);?>
 			</pre>
-		<?php endif;?>
+		<?php endif; */?>
 
 		<?php
-		echo $this->config->item('base_url')
+			echo $this->config->item('base_url')
 		?>
 
 		</div>
