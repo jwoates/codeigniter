@@ -11,8 +11,8 @@ class Core extends CI_Controller {
     {
         $this->load->config('facebook'); 
         $fb_config = array(
-            'appId'  => $this->config->item('appId'),
-            'secret' => $this->config->item('secret') 
+            'appId'  => '329330017143635',
+            'secret' => '4a3cae68535777a6793df72ab18c7904' 
         );
 
         $this->load->library('facebook', $fb_config);
