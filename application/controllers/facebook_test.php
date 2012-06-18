@@ -6,7 +6,7 @@
 			parent::__construct();
 			
 			// $this->load->add_package_path('/Users/elliot/github/codeigniter-facebook/application/');
-			$this->load->library('facebook');
+			#$this->load->library('facebook');
 			$this->facebook->enable_debug(TRUE);
 		}
 		
