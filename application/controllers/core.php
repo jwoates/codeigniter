@@ -9,10 +9,10 @@ class Core extends CI_Controller {
 
     function index()
     {
-
+        $this->load->config('facebook'); 
         $fb_config = array(
-            'appId'  => 'YOUR_APP_ID_HERE',
-            'secret' => 'YOUR_APP_SECRET_HERE'
+            'appId'  => $this->config->item('appId'),
+            'secret' => $this->config->item('secret') 
         );
 
         $this->load->library('facebook', $fb_config);
