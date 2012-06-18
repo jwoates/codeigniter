@@ -13,6 +13,9 @@
     <?php else: ?>
         <h2>Welcome to this facebook thing, please login below</h2>
         <a href="<?php echo $login_url ?>">Login to this thing</a>
+         <pre>
+            <?php echo print_r($user_profile, TRUE) ?>
+        </pre>
     <?php endif; ?>
 
 </body>
