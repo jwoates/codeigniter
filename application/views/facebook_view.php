@@ -53,9 +53,8 @@
 		
 		<?php if ( !$this->facebook->logged_in() ): ?>
 			<a href="<?php echo $this->facebook->login_url()?>">Login</a>
-			<div style="border:2px solid red; padding:10px;">
-				<fb:facepile></fb:facepile>
-			</div>
+			you are not logged in?
+			<fb:facepile></fb:facepile>
 		<?php  else: ?>
 			<img class="avatar" src="<?php echo facebook_picture('me')?>" />
 			<?php $user = $this->facebook->user();?>
