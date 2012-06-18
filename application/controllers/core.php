@@ -33,6 +33,6 @@ class Core extends CI_Controller {
             $data['login_url'] = $this->facebook->getLoginUrl();
         }
 
-        $this->load->view('view',$data);
+        $this->load->view('core',$data);
     }
 }
