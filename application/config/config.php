@@ -15,7 +15,10 @@
 |
 */
 #$config['base_url'] = 'http://codeigniter.local/';
-$config['base_url']	= 'https://allibubba.azurewebsites.net/';
+#$config['base_url']	= 'https://allibubba.azurewebsites.net/';
+$proto = "http" . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "s" : "") . "://";
+$server = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'];
+$config['base_url']    = $proto . $server; 
 
 /*
 |--------------------------------------------------------------------------
@@ -225,7 +228,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'roundhouseagency.com';
 
 /*
 |--------------------------------------------------------------------------
