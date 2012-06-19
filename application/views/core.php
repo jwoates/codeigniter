@@ -5,6 +5,9 @@
 <body>
     <h1>Facebook stuff</h1>
 
+    <?php 
+        var_dump(@$user_profile);
+    ?>
     <?php if (@$user_profile): ?>
         <pre>
             <?php echo print_r($user_profile, TRUE) ?>
