@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "facebook_test";
+$route['default_controller'] = "core";
 $route['404_override'] = '';
 
 
