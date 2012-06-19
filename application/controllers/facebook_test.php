@@ -18,6 +18,7 @@
 			// 
 			// For more details see: http://developers.facebook.com/docs/opengraph
 			
+			$this->facebook->set_callback('https://apps.facebook.com/azure-app/facebook_test/auth');
 			$opengraph = 	array(
 								'type'				=> 'website',
 								'title'				=> 'My Awesome Site',
@@ -71,8 +72,3 @@
 			$this->load->view('facebook_auth');
 		}
 	}
-
-
-http://www.facebook.com/dialog/oauth?
-client_id=329330017143635&
-redirect_uri=https%3A%2F%2Fallibubba.azurewebsites.net%2F&scope=email,user_photos
