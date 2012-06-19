@@ -11,7 +11,7 @@
           fx: 'fade'
       });
   });
-  </script
+  </script>
 	<style type="text/css">
 
 	::selection{ background-color: #E13300; color: white; }
