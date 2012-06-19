@@ -39,13 +39,12 @@ class Facebook_model extends CI_Model {
                         'uid' => $user,
                         'loginUrl' => $this->facebook->getLoginUrl(
                             array(
-                                'scope' => $this->config->item('facebook_app_scope'),
-                                'redirect_uri' => $this->config->item('facebook_app_url') . $this->config->item('facebook_landing')
+                                'scope'         => $this->config->item('facebook_app_scope'),
+                                'redirect_uri'  => $this->config->item('facebook_app_url') . $this->config->item('facebook_landing')
                             )
                         ),
                         'logoutUrl' => $this->facebook->getLogoutUrl(),
                     );
  
         $this->session->set_userdata('fb_data', $fb_data);
-    }
 }
