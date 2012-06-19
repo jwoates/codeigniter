@@ -17,16 +17,14 @@ function index()
             // If this is a protected section that needs user authentication
             // you can redirect the user somewhere else
             // or take any other action you need
-            redirect('login');
+            #redirect('login');
+            $data['fb_data'] = $fb_data;
         }
         else
         {
-            $data = array(
-                    'fb_data' => $fb_data,
-                    );
- 
-            $this->load->view('core', $data);
+            $data['fb_data'] = $fb_data;
         }
+        $this->load->view('core', $data);
     }
 }
 
