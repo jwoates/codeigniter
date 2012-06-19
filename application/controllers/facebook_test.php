@@ -46,7 +46,7 @@
 				// From now on, when we call login() or login_url(), the auth
 				// will redirect back to this url.
 
-				$this->facebook->set_callback(site_url('https://apps.facebook.com/azure-app/facebook_test/auth'));
+				$this->facebook->set_callback('https://apps.facebook.com/azure-app/facebook_test/auth');
 
 				// Header redirection to auth.
 
@@ -71,3 +71,8 @@
 			$this->load->view('facebook_auth');
 		}
 	}
+
+
+http://www.facebook.com/dialog/oauth?
+client_id=329330017143635&
+redirect_uri=https%3A%2F%2Fallibubba.azurewebsites.net%2F&scope=email,user_photos
