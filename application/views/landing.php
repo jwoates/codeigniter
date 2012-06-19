@@ -70,16 +70,16 @@
 	<h1>Welcome to CodeIgniter!</h1>
 
 	<div id="body">
-		<h1>Authenticated...</h1>
+    <?php var_dump($user_profile);?>
+    <?php var_dump(@$user_profile);?>
 
     <?php if (@$user_profile): ?>
+				<h1>Authenticated...</h1>
         <pre>
             <?php echo print_r($user_profile, TRUE) ?>
         </pre>
-        <a target="_parent" href="<?php echo $logout_url ?>">Logout of this thing</a>
     <?php else: ?>
-        <h2>Welcome to this facebook thing, please login below</h2>
-        <a target="_parent" href="<?php echo $login_url ?>">Login to this thing</a>
+				<h1>NOT Authenticated...</h1>
     <?php endif; ?>
 
 	</div>
