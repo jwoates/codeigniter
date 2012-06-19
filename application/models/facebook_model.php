@@ -1,6 +1,6 @@
 <?php
 class Facebook_model extends CI_Model {
- 
+
     public function __construct()
     {
         parent::__construct();
@@ -35,16 +35,16 @@ class Facebook_model extends CI_Model {
         }
  
         $fb_data = array(
-                        'me' => $profile,
-                        'uid' => $user,
-                        'loginUrl' => $this->facebook->getLoginUrl(
-                            array(
-                                'scope'         => $this->config->item('facebook_app_scope'),
-                                'redirect_uri'  => $this->config->item('facebook_app_url') . $this->config->item('facebook_landing')
-                            )
-                        ),
-                        'logoutUrl' => $this->facebook->getLogoutUrl(),
-                    );
- 
+                'me' => $profile,
+                'uid' => $user,
+                'loginUrl' => $this->facebook->getLoginUrl(
+                    array(
+                        'scope' => $this->config->item('facebook_app_scope'),
+                        'redirect_uri' => $this->config->item('facebook_app_url') . $this->config->item('facebook_landing')
+                    )
+                ),
+                'logoutUrl' => $this->facebook->getLogoutUrl(),
+        );
         $this->session->set_userdata('fb_data', $fb_data);
+    }
 }
