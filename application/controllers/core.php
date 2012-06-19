@@ -35,4 +35,3 @@ class Core extends CI_Controller {
         $this->load->view('core',$data);
     }
 }
-
