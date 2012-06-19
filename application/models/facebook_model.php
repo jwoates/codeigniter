@@ -38,7 +38,7 @@ class Facebook_model extends CI_Model {
  
         $fb_data = array(
                 'me' => $profile,
-                'photos' => $photos,
+                'photos' => isset($photos) ? $photos : null,
                 'uid' => $user,
                 'loginUrl' => $this->facebook->getLoginUrl(
                     array(
