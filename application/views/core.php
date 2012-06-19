@@ -11,7 +11,7 @@
       <?php else: ?>
       <img src="https://graph.facebook.com/<?php echo $fb_data['uid']; ?>/picture" alt="" class="pic" />
       <p>Hi <?php echo $fb_data['me']['name']; ?>,<br />
-        <a href="<?php echo site_url('topsecret'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
+        <a href="<?php echo site_url('landing'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
       <?php endif; ?>
     </div>
 </body>

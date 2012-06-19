@@ -3,7 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
-
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> 
+  <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script> 
+  <script type="text/javascript"> 
+  $(document).ready(function() {
+      $('.slideshow').cycle({
+          fx: 'fade'
+      });
+  });
+  </script
 	<style type="text/css">
 
 	::selection{ background-color: #E13300; color: white; }
@@ -76,9 +84,50 @@
     	<div class="fb-login-button" data-show-faces="false" data-width="100" data-max-rows="1" data-scope="email,user_birthday,publish_stream"></div>
     <?php else: ?>
     	<img src="https://graph.facebook.com/<?php echo $fb_data['uid']; ?>/picture" alt="" class="pic" />
+    	
     	<p>Hi <?php echo $fb_data['me']['name']; ?>,<br />
-      <a href="<?php echo site_url('topsecret'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
+      
+      <a href="<?php echo site_url('landing'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
+
+
     <?php endif; ?>
+
+		<?php $photos = $fb_data['photos']; ?>
+    <div class="slideshow"> 
+    
+    <?php
+        foreach($photos['data'] as $photo)
+        {
+            echo "<img src='{$photo['source']}' />";
+        }
+     ?>
+     </div>
+     <?php
+/*
+    $pageURL .= 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    echo '<div class="alb">';
+    if(strstr($pageURL,'.php?')){
+        $and = '&';
+    }else{
+        $and = '?';
+    }
+*/
+
+/*
+    echo '<p class="hd">My Albums</p>';
+    foreach($albums['data'] as $album)
+    {
+        if($album_id == $album['id']){
+            $name = '<b><u>'.$album['name'].'</u></b>';
+        }else{
+            $name = $album['name'];
+        }
+        echo '<p>'."<a href=".$pageURL.$and."action=viewalbum&album_id=".$album['id'].">".$name.'</a></p>';
+    }
+    echo '</div>';
+*/    
+    ?>
+
 
 	</div>
 
