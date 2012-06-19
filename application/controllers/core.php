@@ -26,7 +26,7 @@ class Core extends CI_Controller {
         } else {
             $data['login_url'] = $this->facebook->getLoginUrl(
               $params = array(
-                'redirect_uri' => $this->config->item('facebook_app_url'),
+                'redirect_uri' => $this->config->item('facebook_app_url') . 'welcome/',
                 'scope' => $this->config->item('facebook_app_scope')
               )
             );
