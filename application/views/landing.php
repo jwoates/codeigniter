@@ -2,137 +2,100 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> 
-  <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script> 
-  <script type="text/javascript"> 
-  $(document).ready(function() {
-      $('.slideshow').cycle({
-          fx: 'fade'
-      });
-  });
-  </script>
-	<style type="text/css">
-
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+	<title>SDCC App</title>
+  <link href="/resources/css/application.css" rel="stylesheet" type="text/css" media="screen" />
+ 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script> 
+  <script type="text/javascript" src="/resources/js/mootools-more-1.4.0.1.js"></script> 
+  <script type="text/javascript" src="/resources/js/application.js"></script> 
 </head>
-<body>
+  <body onload="resize();" >
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '<?php echo $app_id; ?>',
+        status     : true,
+        cookie     : true,
+        oauth      : true,
+        xfbml      : true
+      });
+    };
+
+    (function(d){
+       var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       d.getElementsByTagName('head')[0].appendChild(js);
+     }(document));
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=180523668723011";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>SDCC</h1>
 
 	<div id="body">
-    <?php if(!$fb_data['me']): ?>
-      Please login with your FB account: <a target="_parent" href="<?php echo $fb_data['loginUrl']; ?>">login</a>
-      <!-- Or you can use XFBML -->
-    	<div class="fb-login-button" data-show-faces="false" data-width="100" data-max-rows="1" data-scope="email,user_birthday,publish_stream"></div>
-    <?php else: ?>
-    	<img src="https://graph.facebook.com/<?php echo $fb_data['uid']; ?>/picture" alt="" class="pic" />
-    	
-    	<p>Hi <?php echo $fb_data['me']['name']; ?>,<br />
-      
-      <a href="<?php echo site_url('landing'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
-
-
+  	<?php if(!$fb_data['me']): ?>
+    	Please login with your FB account: <a target="_parent" href="<?php echo $fb_data['loginUrl']; ?>">login</a>
+	  	<div class="fb-login-button" data-show-faces="false" data-width="100" data-max-rows="1" data-scope="email,user_birthday,publish_stream"></div>
+  	<?php else: ?>
+  		<img src="https://graph.facebook.com/<?php echo $fb_data['uid']; ?>/picture" alt="" class="pic" />
+	  	<p>Hi <?php echo $fb_data['me']['name']; ?>,<br />
+	    <a href="<?php echo site_url('landing'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
     <?php endif; ?>
 
 		<?php $photos = $fb_data['photos']; ?>
-    <div class="slideshow"> 
     
+    <div class="slideshow"> 
     <?php
-        foreach($photos['data'] as $photo)
-        {
-            echo "<img src='{$photo['source']}' />";
+    	foreach($photos['data'] as $photo)
+    		{
+    		  echo "<img src='{$photo['source']}' />";
         }
-     ?>
-     </div>
-     <?php
-/*
-    $pageURL .= 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-    echo '<div class="alb">';
-    if(strstr($pageURL,'.php?')){
-        $and = '&';
-    }else{
-        $and = '?';
-    }
-*/
-
-/*
-    echo '<p class="hd">My Albums</p>';
-    foreach($albums['data'] as $album)
-    {
-        if($album_id == $album['id']){
-            $name = '<b><u>'.$album['name'].'</u></b>';
-        }else{
-            $name = $album['name'];
-        }
-        echo '<p>'."<a href=".$pageURL.$and."action=viewalbum&album_id=".$album['id'].">".$name.'</a></p>';
-    }
-    echo '</div>';
-*/    
     ?>
+    </div>
 
+		<!-- video player -->
+		<div class="alpha">
+		  <div id="video-wrap" class="yt">
+		    <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="327" width="536" src="https://www.youtube.com/embed/nsWyP0LBikI?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
+		    <span class="video-title">das videoslogen!</span>
+		  </div>
+		</div>
 
+		<div class="beta">
+			<div id="yt-video-list" class="media-list yt" style="display: block; ">
+				<a class="thumb list-0" data-yt-id="nsWyP0LBikI" href="" title="Halo 4 Official Trailer: E3 2012">
+			  	<img alt="Halo 4 Official Trailer: E3 2012" src="https://img.youtube.com/vi/nsWyP0LBikI/default.jpg" width="50" height="28">
+			    <span>Halo 4 Official Trailer: E3 2012</span>
+			  </a>
+			  <a class="thumb list-1" data-yt-id="QWWzhpjS62I" href="" title="E3 2012: Halo 4 Gameplay">
+			      <img alt="E3 2012: Halo 4 Gameplay" src="https://img.youtube.com/vi/QWWzhpjS62I/default.jpg" width="50" height="28">
+			      <span>E3 2012: Halo 4 Gameplay</span>
+			  </a>
+			  <a class="thumb list-2" data-yt-id="vBwB5JBMILA" href="" title="E3 2012: Gears Of War: Judgment">
+			      <img alt="E3 2012: Gears Of War: Judgment" src="https://img.youtube.com/vi/vBwB5JBMILA/default.jpg" width="50" height="28">
+			      <span>E3 2012: Gears Of War: Judgment</span>
+			  </a>
+			</div>
+		</div>
+
+		<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-</div>
-
+<script src="//www.youtube.com/player_api" type="text/javascript" charset="utf-8" async="" defer=""></script>
+<script type="text/javascript" src="/resources/js/application.js"></script> 
+  <script>
+    function resize() {
+      FB.Canvas.setAutoResize();
+    }
+  </script>
 </body>
 </html>
