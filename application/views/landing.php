@@ -42,14 +42,6 @@
 	<h1>SDCC</h1>
 
 	<div id="body">
-  	<?php if(!$fb_data['me']): ?>
-    	Please login with your FB account: <a target="_parent" href="<?php echo $fb_data['loginUrl']; ?>">login</a>
-	  	<div class="fb-login-button" data-show-faces="false" data-width="100" data-max-rows="1" data-scope="email,user_birthday,publish_stream"></div>
-  	<?php else: ?>
-  		<img src="https://graph.facebook.com/<?php echo $fb_data['uid']; ?>/picture" alt="" class="pic" />
-	  	<p>Hi <?php echo $fb_data['me']['name']; ?>,<br />
-	    <a href="<?php echo site_url('landing'); ?>">You can access the top secret page</a> or <a href="<?php echo $fb_data['logoutUrl']; ?>">logout</a> </p>
-    <?php endif; ?>
 
 		<?php $photos = $fb_data['photos']; ?>
     
@@ -60,6 +52,14 @@
     		  echo "<img src='{$photo['source']}' />";
         }
     ?>
+    <br />
+
+  <?php echo $cache; ?>
+  
+  <br />
+  Time: <?php echo $this->benchmark->elapsed_time(); ?>
+  <br />
+  Mem: <?php echo $this->benchmark->memory_usage(); ?>
     </div>
 
 		<!-- video player -->
