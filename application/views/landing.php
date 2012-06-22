@@ -43,49 +43,44 @@
 
 	<div id="body">
 
-		<?php $photos = $fb_data['photos']; ?>
     
+  <h3>Video Playlist</h3>
     <div class="slideshow"> 
-    <?php
-    	foreach($photos['data'] as $photo)
-    		{
-    		  echo "<img src='{$photo['source']}' />";
+      <?php
+        $photos =  $fb_photos;
+        foreach ($photos->data as $key=>$value) {
+          //print("<pre>".print_r($value->source,true)."</pre>");
+          echo '<img height="50" width="50" src="' . $value->source . '" />';
         }
-    ?>
-    <br />
-
-  <?php echo $cache; ?>
-  
-  <br />
-  Time: <?php echo $this->benchmark->elapsed_time(); ?>
-  <br />
-  Mem: <?php echo $this->benchmark->memory_usage(); ?>
+      ?>
     </div>
 
-		<!-- video player -->
-		<div class="alpha">
-		  <div id="video-wrap" class="yt">
-		    <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="327" width="536" src="https://www.youtube.com/embed/nsWyP0LBikI?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
-		    <span class="video-title">das videoslogen!</span>
-		  </div>
-		</div>
 
-		<div class="beta">
-			<div id="yt-video-list" class="media-list yt" style="display: block; ">
-				<a class="thumb list-0" data-yt-id="nsWyP0LBikI" href="" title="Halo 4 Official Trailer: E3 2012">
-			  	<img alt="Halo 4 Official Trailer: E3 2012" src="https://img.youtube.com/vi/nsWyP0LBikI/default.jpg" width="50" height="28">
-			    <span>Halo 4 Official Trailer: E3 2012</span>
-			  </a>
-			  <a class="thumb list-1" data-yt-id="QWWzhpjS62I" href="" title="E3 2012: Halo 4 Gameplay">
-			      <img alt="E3 2012: Halo 4 Gameplay" src="https://img.youtube.com/vi/QWWzhpjS62I/default.jpg" width="50" height="28">
-			      <span>E3 2012: Halo 4 Gameplay</span>
-			  </a>
-			  <a class="thumb list-2" data-yt-id="vBwB5JBMILA" href="" title="E3 2012: Gears Of War: Judgment">
-			      <img alt="E3 2012: Gears Of War: Judgment" src="https://img.youtube.com/vi/vBwB5JBMILA/default.jpg" width="50" height="28">
-			      <span>E3 2012: Gears Of War: Judgment</span>
-			  </a>
+
+  <h3>Video Playlist</h3>
+    <!-- video player -->
+    <div class="alpha">
+      <div id="video-wrap" class="yt">
+        <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="327" width="536" src="https://www.youtube.com/embed/nsWyP0LBikI?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
+        <span class="video-title">das videoslogen!</span>
+      </div>
+    </div>
+
+    <!-- video list -->
+    <div class="beta">
+      <div id="yt-video-list" class="media-list yt" style="display: block; ">
+      <?php
+        foreach ($playlist as $key => $value) {
+          echo '<a style="display:block;" href="#" data-yt-id="' . $value['id'] .'" ><img src="//img.youtube.com/vi/' . $value['id'] . '/default.jpg" /><span>' . $value['title'] . '</span></a>';
+        }
+      ?>
 			</div>
-		</div>
+    </div>
+    <div class="clear">&nbsp;</div>
+
+    Time: <?php echo $this->benchmark->elapsed_time(); ?>
+    <br />
+    Mem: <?php echo $this->benchmark->memory_usage(); ?>
 
 		<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 	</div>

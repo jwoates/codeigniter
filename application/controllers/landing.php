@@ -6,9 +6,25 @@ class Landing extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('zend');
+        $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
     }
 
     function index(){
+        /* have you authenticated? */
+        $this->load->model('Facebook_model');
+        $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
+        $data['fb_data'] = $fb_data;
+        
+        $data['fb_photos'] = $this->getPhotoFeed('live');
+
+
+        
+        if((!$fb_data['uid']) or (!$fb_data['me']))
+        {
+            redirect('core');
+        }else{
+            $data['fb_data'] = $fb_data;
+        }
 
         $this->zend->load('Zend/Gdata/YouTube');
         $this->yt = new Zend_Gdata_YouTube();
@@ -16,21 +32,10 @@ class Landing extends CI_Controller {
 
 
 
-        /* cache */
-        /*
-        $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-        if ( ! $landingCache = $this->cache->get('landingCache'))
-        {
-             echo 'Saving to the cache!<br />';
-             $landingCache = 'landingCachebarbazzzzzz7777!';
 
-             // Save into the cache for 5 minutes
-             $this->cache->save('landingCache', $landingCache, 300);
-        }
-        */
 
-        $userName = "xbox";
-        $playlistListFeed = $this->yt->getPlaylistListFeed($userName);
+        #$userName = "xbox";
+        #$playlistListFeed = $this->yt->getPlaylistListFeed($userName);
         
 
         $url = 'http://gdata.youtube.com/feeds/api/playlists/1043609265A2F46F?v=2';
@@ -43,34 +48,49 @@ class Landing extends CI_Controller {
         }
         $data['playlist']       = $pl_array;
         $data['playlist_json']  = json_encode($pl_array);
+
         
+        #var_dump($this->facebook->api($this->config->item('facebook_album_id') . '/photos'));
+
         //print("<pre>".print_r($pl_array,true)."</pre>");
 
         ## $data['playlist'] = $this->printPlaylistListFeed($playlistListFeed, true);
         ## $data['playlist'] = $this->printPlaylistListFeed($videoFeed, true);
 
-        // $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
- 
-        // if((!$fb_data['uid']) or (!$fb_data['me']))
-        // {
-        //     // you can redirect the user somewhere else
-        //     redirect('core');
-        // }
-        // else
-        // {
-        //     $data = array(
-        //         'fb_data'   => $fb_data,
-        //         'app_id'    => $this->config->item('appId')
-        //     );
+        
 
-        // }
-        // $this->load->view('landing', $data);
+
 
         //$this->output->cache(10);
         //$this->output->set_output($data);
-        $this->load->view('cache', $data);
+        $this->load->view('landing', $data);
     }
     
+    private function getPhotoFeed($type=null)
+    {
+        if ( ! $get_photos = $this->cache->get('get_photos'))
+            {
+            switch ($type) {
+                case 'live':
+                    $get_photos = file_get_contents('https://graph.facebook.com/10150575545216023/photos');
+                    break;
+                case 'api':
+                    $get_photos = file_get_contents('http://rhapi.com/facebook/photos/10150575545216023/?type=json&limit=10');
+                    break;
+                case 'test':
+                    $get_photos = 'fuck';
+                    break;
+                
+                default:
+                    /* load times are really slow, using static data source for now */
+                    $get_photos = file_get_contents('file:///home/allibubba/Projects/codeigniter/album.txt');
+                    break;
+            }
+            $this->cache->save('get_photos', $get_photos, 600);
+        }
+        return json_decode($get_photos);        
+    }
+
     private function printPlaylistListFeed($playlistListFeed, $showPlaylistContents)
     {
         $pl_array = array();
@@ -83,18 +103,6 @@ class Landing extends CI_Controller {
         }
         return $pl_array;
     }    
-    /*
-    private function printVideoFeed($videoFeed)
-    {
-      $count = 1;
-      foreach ($videoFeed as $videoEntry) {
-        #echo "Entry # " . $count . "\n";
-        $this->printVideoEntry($videoEntry);
-        #echo "\n";
-        $count++;
-      }
-    }
-    */
     private function printPlaylistListEntry($playlistListEntry, $showPlaylistContents = false)
     {
 
