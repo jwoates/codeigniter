@@ -22,5 +22,5 @@ if($_SERVER['HTTP_HOST'] == '10.1.10.249')
 
 /* constants */
 $config['facebook_album_id']    = '226149420814213';
-$config['facebook_app_scope']   = 'email,photo_upload,user_photos,read_stream';
+$config['facebook_app_scope']   = 'email,photo_upload,user_photos,user_birthday';
 $config['facebook_landing']     = 'landing';

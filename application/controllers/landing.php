@@ -14,18 +14,20 @@ class Landing extends CI_Controller {
         $this->load->model('Facebook_model');
         $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
         $data['fb_data'] = $fb_data;
-        
-        $data['fb_photos'] = $this->getPhotoFeed('live');
+        $birthday = $fb_data['me']['birthday'];
+        $age = $this->birthday($birthday);
 
-
-        
-        if((!$fb_data['uid']) or (!$fb_data['me']))
+        if((!$fb_data['uid']) or (!$fb_data['me']) or ($age < 21))
         {
             redirect('core');
         }else{
             $data['fb_data'] = $fb_data;
         }
+        /* feeds */
+        $data['fb_photos']      = $this->getPhotoFeed('live');
+        $data['twittter_feed']  = $this->getTwitterFeed();
 
+        /* youtube */
         $this->zend->load('Zend/Gdata/YouTube');
         $this->yt = new Zend_Gdata_YouTube();
         $this->yt->setMajorProtocolVersion(2);
@@ -65,7 +67,27 @@ class Landing extends CI_Controller {
         //$this->output->set_output($data);
         $this->load->view('landing', $data);
     }
-    
+  
+    private function birthday ($birthday){
+        list($day,$month,$year) = explode("/",$birthday);
+        $year_diff  = date("Y") - $year;
+        $month_diff = date("m") - $month;
+        $day_diff   = date("d") - $day;
+        if ($day_diff < 0 || $month_diff < 0)
+        $year_diff--;
+        return $year_diff;
+    }
+
+    private function getTwitterFeed()
+    {
+        if ( ! $get_twitter = $this->cache->get('get_twitter'))
+        {
+            $get_twitter = file_get_contents('http://rhapi.com/twitter/search/kinect?type=json&limit=10');
+        }
+        $this->cache->save('get_twitter', $get_twitter, 600);
+        return json_decode($get_twitter);        
+    }
+
     private function getPhotoFeed($type=null)
     {
         if ( ! $get_photos = $this->cache->get('get_photos'))
@@ -97,7 +119,7 @@ class Landing extends CI_Controller {
         $count = 1;
         foreach ($playlistListFeed as $playlistListEntry) {
             if( $count > 3  ) return false;
-            #print("<pre>".print_r($this->printPlaylistListEntry($playlistListEntry, true),true)."</pre>");
+            
             array_push($pl_array, $this->printPlaylistListEntry($playlistListEntry, true));   
             $count++;
         }
@@ -107,10 +129,9 @@ class Landing extends CI_Controller {
     {
 
         $pe_array = array();
-        # echo 'Title: ' . $playlistListEntry->title->text . "\n";
-        # echo 'Description: ' . $playlistListEntry->description->text . "\n";
+        # $playlistListEntry->title->text ;
+        # $playlistListEntry->description->text;
         $pe_array['playlist_title']          = $playlistListEntry->title->text;
-        //$pe_array['playlist_description']    = ($playlistListEntry->description->text != '') ? $playlistListEntry->description->text : 'no description';
         $pe_array['playlist_content']        = array();
 
         $this->yt->setMajorProtocolVersion(2);
@@ -118,7 +139,7 @@ class Landing extends CI_Controller {
         if ($showPlaylistContents === true) {
             $playlistVideoFeed = $this->yt->getPlaylistVideoFeed($playlistListEntry->getPlaylistVideoFeedUrl());
             
-            // Print out metadata for each video in the playlist
+            // metadata for each video in the playlist
             foreach ($playlistVideoFeed as $playlistVideoEntry) {
                 array_push($pe_array['playlist_content'],$this->printVideoEntry($playlistVideoEntry));
             }
@@ -133,40 +154,6 @@ class Landing extends CI_Controller {
         $video['id']        = $videoEntry->getVideoId();
         
         return $video;
-
-        #echo 'Video: ' . $videoEntry->getVideoTitle() . "<br />";
-        #echo 'Video ID: ' . $videoEntry->getVideoId() . "\n";
-        #echo 'Updated: ' . $videoEntry->getUpdated() . "\n";
-        #echo 'Description: ' . $videoEntry->getVideoDescription() . "\n";
-        #echo 'Category: ' . $videoEntry->getVideoCategory() . "\n";
-        #echo 'Tags: ' . implode(", ", $videoEntry->getVideoTags()) . "\n";
-        #echo 'Watch page: ' . $videoEntry->getVideoWatchPageUrl() . "\n";
-        #echo 'Flash Player Url: ' . $videoEntry->getFlashPlayerUrl() . "\n";
-        #echo 'Duration: ' . $videoEntry->getVideoDuration() . "\n";
-        #echo 'View count: ' . $videoEntry->getVideoViewCount() . "\n";
-        #echo 'Rating: ' . $videoEntry->getVideoRatingInfo() . "\n";
-        #echo 'Geo Location: ' . $videoEntry->getVideoGeoLocation() . "\n";
-        #echo 'Recorded on: ' . $videoEntry->getVideoRecorded() . "\n";
-        
-        // see the paragraph above this function for more information on the 
-        // 'mediaGroup' object. in the following code, we use the mediaGroup
-        // object directly to retrieve its 'Mobile RSTP link' child
-        
-        /*
-        foreach ($videoEntry->mediaGroup->content as $content) {
-          if ($content->type === "video/3gpp") {
-            # echo 'Mobile RTSP link: ' . $content->url . "\n";
-          }
-        }
-        #echo "Thumbnails:\n";
-        $videoThumbnails = $videoEntry->getVideoThumbnails();
-    
-        foreach($videoThumbnails as $videoThumbnail) {
-          #echo $videoThumbnail['time'] . ' - ' . $videoThumbnail['url'];
-          #echo ' height=' . $videoThumbnail['height'];
-          #echo ' width=' . $videoThumbnail['width'] . "\n";
-        }
-        */
     }
     
 }

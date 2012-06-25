@@ -42,6 +42,9 @@
 	<h1>SDCC</h1>
 
 	<div id="body">
+    <?php
+    print("<pre>".print_r($fb_data['me'],true)."</pre>");
+    ?>
 
     
   <h3>Video Playlist</h3>
