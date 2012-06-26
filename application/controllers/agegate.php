@@ -11,8 +11,6 @@ class Agegate extends CI_Controller {
 
     function index()
     {
-        print_r($this->session->all_userdata());
-
         $data['message'] = null;
         if($this->session->userdata('user_age') == 'approved')
         {
@@ -31,16 +29,21 @@ class Agegate extends CI_Controller {
   
     function authenticate()
     {   
+        $this->load->helper('birthday_helper');
+
         $data = array();
         
         $data['message'] = null;
 
-        $age = (isset($_POST['age']) ? $_POST['age'] : 100);
-
-        if ($age < 50){
-            
+        $day    = ($_POST['day'] != 'DD')     ? $_POST['day']     : 1;
+        $month  = ($_POST['month'] != 'MM')   ? $_POST['month']   : 1;
+        $year   = ($_POST['year'] != 'YYYY')    ? $_POST['year']    : 2012;
+        $age = birthday("$day/$month/$year");
+        
+        if ($age < 18){
             $this->session->set_userdata('user_age', 'denied');
-            $data['message'] = 'too young';
+            redirect('core');
+            
         }else{
             $this->session->set_userdata('user_age', 'approved');
             redirect('landing');

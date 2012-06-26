@@ -25,5 +25,6 @@ class Core extends CI_Controller {
     function destroy()
     {
         $this->session->sess_destroy();
+        redirect('core');
     }
 }

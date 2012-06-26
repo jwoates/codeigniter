@@ -1,7 +1,7 @@
 <?php
 
   function birthday ($birthday){
-    if (!isset($birthdat)) return 'no birthday';
+    if (!isset($birthday)) return 'no birthday';
     list($day,$month,$year) = explode("/",$birthday);
     $year_diff  = date("Y") - $year;
     $month_diff = date("m") - $month;
