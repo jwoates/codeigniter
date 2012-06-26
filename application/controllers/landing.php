@@ -5,41 +5,36 @@ class Landing extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->config('twitter');
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
+        $this->load->model('Facebook_model');
     }
 
     function index(){
-        /* have you authenticated? */
-        $this->load->model('Facebook_model');
-        $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
-        $data['fb_data'] = $fb_data;
-        $birthday = $fb_data['me']['birthday'];
-        $age = $this->birthday($birthday);
+        
+        # no sneaking in
+        if($this->session->userdata('user_age') == 'denied')
+        {
+            redirect('restricted/age');
+            exit;
+        }
 
-        if((!$fb_data['uid']) or (!$fb_data['me']) or ($age < 21))
+        /* have you authenticated? */
+        $data['fb_data'] = $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information;
+        
+        if((!$fb_data['uid']) or (!$fb_data['me']))
         {
             redirect('core');
-        }else{
-            $data['fb_data'] = $fb_data;
         }
+
         /* feeds */
         $data['fb_photos']      = $this->getPhotoFeed('live');
-        $data['twittter_feed']  = $this->getTwitterFeed();
 
         /* youtube */
         $this->zend->load('Zend/Gdata/YouTube');
         $this->yt = new Zend_Gdata_YouTube();
         $this->yt->setMajorProtocolVersion(2);
-
-
-
-
-
-        #$userName = "xbox";
-        #$playlistListFeed = $this->yt->getPlaylistListFeed($userName);
-        
-
         $url = 'http://gdata.youtube.com/feeds/api/playlists/1043609265A2F46F?v=2';
         $videoFeed = $this->yt->getPlaylistVideoFeed($url);
         // Print out metadata for each video in the playlist
@@ -48,44 +43,31 @@ class Landing extends CI_Controller {
           // Reuse the printVideoEntry function defined earlier to show video metadata
             array_push($pl_array, $this->printVideoEntry($playlistVideoEntry));
         }
-        $data['playlist']       = $pl_array;
-        $data['playlist_json']  = json_encode($pl_array);
-
-        
-        #var_dump($this->facebook->api($this->config->item('facebook_album_id') . '/photos'));
-
-        //print("<pre>".print_r($pl_array,true)."</pre>");
-
-        ## $data['playlist'] = $this->printPlaylistListFeed($playlistListFeed, true);
-        ## $data['playlist'] = $this->printPlaylistListFeed($videoFeed, true);
-
-        
-
-
-
-        //$this->output->cache(10);
-        //$this->output->set_output($data);
+        $data['yt_playlist']                = $pl_array;
+        $data['twitter_approved_feed']      = $this->getApprovedTwitterFeed();
         $this->load->view('landing', $data);
     }
   
-    private function birthday ($birthday){
-        list($day,$month,$year) = explode("/",$birthday);
-        $year_diff  = date("Y") - $year;
-        $month_diff = date("m") - $month;
-        $day_diff   = date("d") - $day;
-        if ($day_diff < 0 || $month_diff < 0)
-        $year_diff--;
-        return $year_diff;
-    }
 
-    private function getTwitterFeed()
+    private function getTwitterFeed($url=null)
     {
         if ( ! $get_twitter = $this->cache->get('get_twitter'))
         {
-            $get_twitter = file_get_contents('http://rhapi.com/twitter/search/kinect?type=json&limit=10');
+            $get_twitter = file_get_contents($this->config->item('tw_feed_url'));
         }
         $this->cache->save('get_twitter', $get_twitter, 600);
         return json_decode($get_twitter);        
+    }
+    
+    private function getApprovedTwitterFeed($url=null)
+    {
+        if ( ! $get_approved_twitter = $this->cache->get('get_approved_twitter'))
+        {
+            $get_approved_twitter = file_get_contents('http://feeds.tidytweet.com/client/sdcc/feed/roundhousedemo/legacy.atom');
+        }
+        $this->cache->save('get_approved_twitter', $get_approved_twitter, 600);
+        return simplexml_load_string($get_approved_twitter); 
+
     }
 
     private function getPhotoFeed($type=null)

@@ -61,5 +61,11 @@
     background-color:#ccc;margin:8px;
   }
   #yt-video-list a img{margin-right:10px;}
-  .alpha{min-height:500px;width:536px;float:left;}
-  .beta{min-height:500px;width:300;float:right;}
+  .alpha{border:1px solid #ccc; padding:10px}
+  .beta, .gamma{width:450px;border:1px solid #ccc; padding:10px;margin:10px;float:left;}
+  .tweet{
+    border:1px solid #ccc;
+    padding:8px;
+    margin:8px;
+    width:300px;
+  }

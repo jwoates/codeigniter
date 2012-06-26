@@ -47,11 +47,11 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
+/*
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'allibubba';
-$db['default']['password'] = '13MooMo13';
-$db['default']['database'] = 'allibubA9iTWNTra';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'rh123456!';
+$db['default']['database'] = 'codeigniter';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,7 +63,7 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
+*/
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
