@@ -52,8 +52,10 @@
     <script src="https://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 
     <script type="text/javascript">
-      window.addEvent('domready' function(){
+      window.addEvent('domready', function(){
+        console.log($("share_message"));
         $("share_message").addEvent("click",function(e){
+            console.log('clicked');
             var obj = {
               method: 'feed',
               link:         "http://http://apps.facebook.com/rh-jackson/",
