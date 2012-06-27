@@ -10,9 +10,7 @@
   <meta property="og:description" content="bla bla" />
 
   <link href="/resources/css/application.css" rel="stylesheet" type="text/css" media="screen" />
- 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script> 
-  <script type="text/javascript" src="/resources/js/mootools-more-1.4.0.1.js"></script> 
-  <script type="text/javascript" src="/resources/js/application.js"></script> 
+  
 </head>
   <body onload="resize();" >
   <div id="fb-root"></div>
@@ -139,5 +137,6 @@
       FB.Canvas.setAutoResize();
     }
   </script>
+  <script type="text/javascript" src="/resources/js/application.js"></script> 
 </body>
 </html>
