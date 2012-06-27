@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>SDCC App</title>
-<meta property="og:title" content="San Diego Comicon Hub"/>
+  <meta property="og:title" content="San Diego Comicon Hub"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://apps.facebook.com/elc_ent_expo/us"/>
   <meta property="og:image" content="https://c193490.ssl.cf1.rackcdn.com/E3-2012/share-image.png"/>

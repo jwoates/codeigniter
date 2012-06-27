@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SDCC App</title>
-<meta property="og:title" content="San Diego Comicon Hub"/>
+  <meta property="og:title" content="San Diego Comicon Hub"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://apps.facebook.com/elc_ent_expo/us"/>
   <meta property="og:image" content="https://c193490.ssl.cf1.rackcdn.com/E3-2012/share-image.png"/>
   <meta property="og:description" content="bla bla" />
+
+  <link href="/resources/js/mobile.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="/resources/css/mobileCustom.css" rel="stylesheet" type="text/css" media="screen" />
+  <script src="/resources/js/mobile.js"></script>
 
   <link href="/resources/css/application.css" rel="stylesheet" type="text/css" media="screen" />
   

@@ -9,11 +9,11 @@ if($_SERVER['HTTP_HOST'] == '10.1.10.249')
 }
 
 /* vadim */
-elseif($_SERVER['HTTP_HOST'] == '10.1.10.xxx')
+elseif($_SERVER['HTTP_HOST'] == '10.1.10.193')
 {
-  $config['appId']                = 'xxx';
-  $config['secret']               = 'xxx';
-  $config['facebook_app_url']     = 'https://apps.facebook.com/xxx/';
+  $config['appId']                = '291750807589264';
+  $config['secret']               = '88eee99cc3c945d7453611a5520cc210';
+  $config['facebook_app_url']     = 'https://apps.facebook.com/rh_vadim/';
 }
 
 /* azure*/
