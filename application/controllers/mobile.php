@@ -8,7 +8,16 @@ class Mobile extends CI_Controller {
         $this->load->config('twitter');
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-        $this->load->model('Facebook_model');
+        # $this->load->model('Facebook_model');
+
+        # no sneaking in
+        if($this->session->userdata('user_age') == 'denied')
+        {
+            redirect('restricted/age');
+            exit;
+        }elseif($this->session->userdata('user_age') != 'approved'){
+            redirect('agegate');
+        }
     }
 
     function index()
@@ -18,20 +27,7 @@ class Mobile extends CI_Controller {
     function twitter()
     {
         
-        # no sneaking in
-        if($this->session->userdata('user_age') == 'denied')
-        {
-            redirect('restricted/age');
-            exit;
-        }
 
-        /* have you authenticated? */
-        $data['fb_data'] = $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information;
-        
-        if((!$fb_data['uid']) or (!$fb_data['me']))
-        {
-            redirect('core');
-        }
         $data['twitter_approved_feed']      = $this->getApprovedTwitterFeed();
 
         $data['yield'] = $this->load->view('mobile/twitter',$data, TRUE);
@@ -45,6 +41,7 @@ class Mobile extends CI_Controller {
         $this->yt->setMajorProtocolVersion(2);
         $url = 'http://gdata.youtube.com/feeds/api/playlists/1043609265A2F46F?v=2';
         $videoFeed = $this->yt->getPlaylistVideoFeed($url);
+        
         // Print out metadata for each video in the playlist
         $pl_array = array();
         foreach ($videoFeed as $playlistVideoEntry) {
@@ -52,18 +49,17 @@ class Mobile extends CI_Controller {
             array_push($pl_array, $this->printVideoEntry($playlistVideoEntry));
         }
         $data['yt_playlist']                = $pl_array;
-                
         $data['yield'] = $this->load->view('mobile/video',$data, TRUE);
         $this->load->view('layout/mobile', $data);        
     }
     
-    function photos()
+    function photo()
     {
         $data['fb_photos']      = $this->getPhotoFeed('live');
         $data['yield'] = $this->load->view('mobile/photo',$data, TRUE);
         $this->load->view('layout/mobile', $data);        
     }
-    function events()
+    function event()
     {
         $data['yield'] = $this->load->view('mobile/event',null, TRUE);
         $this->load->view('layout/mobile', $data);

@@ -8,11 +8,7 @@ class Landing extends CI_Controller {
         $this->load->config('twitter');
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-        #$this->load->model('Facebook_model');
-    }
 
-    function index(){
-        
         # no sneaking in
         if($this->session->userdata('user_age') == 'denied')
         {
@@ -21,6 +17,10 @@ class Landing extends CI_Controller {
         }elseif($this->session->userdata('user_age') != 'approved'){
             redirect('agegate');
         }
+    }
+
+    function index(){
+        
 
         /* have you authenticated? */
         /*
@@ -58,7 +58,10 @@ class Landing extends CI_Controller {
         }
     }
   
-
+    /* ********************************************************************************************
+    PRIVATE FUNCTIONS
+    ******************************************************************************************** */
+    
     private function getTwitterFeed($url=null)
     {
         if ( ! $get_twitter = $this->cache->get('get_twitter'))
