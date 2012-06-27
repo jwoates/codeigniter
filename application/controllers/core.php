@@ -11,7 +11,13 @@ class Core extends CI_Controller {
         if((!$fb_data['uid']) or (!$fb_data['me']))
         {
             $data['fb_data'] = $fb_data;
-            $this->load->view('core', $data);
+            $data['yield'] = $this->load->view('facebook/core',$data, TRUE);
+            if($this->agent->is_mobile() == true)
+            {
+                $this->load->view('layout/mobile', $data);
+            }else{
+                $this->load->view('layout/general', $data);
+            }
         }else{
             $data['fb_data'] = $fb_data;
             if($this->session->userdata('user_age') == 'denied')

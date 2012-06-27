@@ -11,10 +11,16 @@ class Agegate extends CI_Controller {
 
     function index()
     {
+
         $data['message'] = null;
         if($this->session->userdata('user_age') == 'approved')
         {
-            redirect('landing');
+            if($this->agent->is_mobile() == true)
+            {
+                redirect('mobile/twitter');
+            }else{
+                redirect('landing');
+            }
             exit;
         }
 
@@ -24,7 +30,13 @@ class Agegate extends CI_Controller {
             exit;
         }
 
-        $this->load->view('agegate', $data);
+        $data['yield'] = $this->load->view('facebook/agegate',$data, TRUE);
+        if($this->agent->is_mobile() == true)
+        {
+            $this->load->view('layout/mobile', $data);
+        }else{
+            $this->load->view('layout/general', $data);
+        }
     }
   
     function authenticate()
@@ -46,8 +58,12 @@ class Agegate extends CI_Controller {
             
         }else{
             $this->session->set_userdata('user_age', 'approved');
-            redirect('landing');
+            if($this->agent->is_mobile() == true)
+            {
+                redirect('mobile/twitter');
+            }else{
+                redirect('landing');
+            }            
         }
-        $this->load->view('agegate', $data);
     }
 }

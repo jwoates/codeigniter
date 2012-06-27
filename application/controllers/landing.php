@@ -45,7 +45,14 @@ class Landing extends CI_Controller {
         }
         $data['yt_playlist']                = $pl_array;
         $data['twitter_approved_feed']      = $this->getApprovedTwitterFeed();
-        $this->load->view('landing', $data);
+
+        $data['yield'] = $this->load->view('facebook/landing',$data, TRUE);
+        if($this->agent->is_mobile() == true)
+        {
+            $this->load->view('layout/mobile', $data);
+        }else{
+            $this->load->view('layout/general', $data);
+        }
     }
   
 
