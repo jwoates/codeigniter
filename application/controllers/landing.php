@@ -8,7 +8,7 @@ class Landing extends CI_Controller {
         $this->load->config('twitter');
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-        $this->load->model('Facebook_model');
+        #$this->load->model('Facebook_model');
     }
 
     function index(){
@@ -18,16 +18,19 @@ class Landing extends CI_Controller {
         {
             redirect('restricted/age');
             exit;
+        }elseif($this->session->userdata('user_age') != 'approved'){
+            redirect('agegate');
         }
 
         /* have you authenticated? */
+        /*
         $data['fb_data'] = $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information;
         
         if((!$fb_data['uid']) or (!$fb_data['me']))
         {
             redirect('core');
         }
-
+        */
         /* feeds */
         $data['fb_photos']      = $this->getPhotoFeed('live');
 

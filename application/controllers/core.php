@@ -3,10 +3,11 @@ class Core extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Facebook_model');
+        #$this->load->model('Facebook_model');
     }
     function index()
     {
+        /*
         $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
         if((!$fb_data['uid']) or (!$fb_data['me']))
         {
@@ -27,6 +28,8 @@ class Core extends CI_Controller {
             }            
             redirect('agegate');
         }
+        */
+        redirect('agegate');
     }
     function destroy()
     {
