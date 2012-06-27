@@ -70,9 +70,21 @@
       });
     </script>
     <h1>MOBILE</h1>
+    <!-- content -->
     <?php
       echo $yield;
     ?>   
+    <!-- end content -->
+    
+    <!-- mobile navigation -->
+    <ul style="clear:both;">
+      <li><a href="/mobile/twitter">TWITTER</a></li>
+      <li><a href="/mobile/video">VIDEOS</a></li>
+      <li><a href="/mobile/photo">PHOTOS</a></li>
+      <li><a href="/mobile/event">EVENTS</a></li>
+    </ul>
+    <!-- end mobile navigation -->
+
 
     <div class="clear">&nbsp;</div>
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
