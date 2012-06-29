@@ -47,9 +47,9 @@ class Agegate extends CI_Controller {
         
         $data['message'] = null;
 
-        $day    = ($_POST['day'] != 'DD')     ? $_POST['day']     : 1;
-        $month  = ($_POST['month'] != 'MM')   ? $_POST['month']   : 1;
-        $year   = ($_POST['year'] != 'YYYY')    ? $_POST['year']    : 2012;
+        $day    = ($_POST['day'] != '')     ? $_POST['day']     : 1;
+        $month  = ($_POST['month'] != '')   ? $_POST['month']   : 1;
+        $year   = ($_POST['year'] != '')    ? $_POST['year']    : 2012;
         $age = birthday("$day/$month/$year");
         
         if ($age < 18){

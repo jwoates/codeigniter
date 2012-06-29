@@ -1,0 +1,145 @@
+/*
+// ==========================================================================
+// ★ Grid.less ★
+// ==========================================================================
+*/
+
+// Defaults which you can freely override
+@column-width: 115;
+@gutter-width: 20;
+@columns: 6;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+//Prefix Extra space + Sufffix extrax space + Pull and Push
+@magnet: ((@column-width*1px)+@gutter-width);
+
+
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// @min-width: 960;
+// @correction: 0.5 / @min-width * 100 * 1%;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  *zoom:1;
+  &:before,
+  &:after {
+      content:"";
+      display:table;
+  }
+  &:after {
+      clear:both;
+  }
+}
+
+
+body { width: 100%; .clearfix; }
+.row(@columns:@columns) {
+  display: block;
+  width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+  margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+  // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+  // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+  .clearfix;
+}
+.column(@x,@columns:@columns) {
+  display: inline;
+  float: left;
+  width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+  margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+  // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
+  // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
+}
+
+
+// The Grid
+// ==========================================================================
+
+.row { margin-bottom:20px; }
+.container                                  { position:relative; width:@total-width; margin:0 auto; padding:0; }
+.columns.alpha                              { margin-left: 0; }
+.columns.omega                              { margin-right: 0; }
+.alpha.omega                                { margin-left: 0; margin-right: 0; }
+.container .one.column,
+.container .one.columns                     { .column(1);  }
+.container .two.columns                     { .column(2);  }
+.container .three.columns                   { .column(3);  }
+.container .four.columns                    { .column(4);  }
+.container .five.columns                    { .column(5);  }
+.container .six.columns                     { .column(6);  }
+.container .seven.columns                   { .column(7);  }
+.container .eight.columns                   { .column(8);  }
+.container .nine.columns                    { .column(9);  }
+.container .ten.columns                     { .column(10);  }
+.container .eleven.columns                  { .column(11);  }
+.container .twelve.columns                  { .column(12);  }
+
+// Prefix Extra Space >> 12 Columns
+.container .offset-by-one                   { padding-left: @magnet*1; }
+.container .offset-by-two                   { padding-left: @magnet*2;  }
+.container .offset-by-three                 { padding-left: @magnet*3;  }
+.container .offset-by-four                  { padding-left: @magnet*4;  }
+.container .offset-by-five                  { padding-left: @magnet*5;  }
+.container .offset-by-six                   { padding-left: @magnet*6;  }
+.container .offset-by-seven                 { padding-left: @magnet*7;  }
+.container .offset-by-eight                 { padding-left: @magnet*8;  }
+.container .offset-by-nine                  { padding-left: @magnet*9;  }
+.container .offset-by-ten                   { padding-left: @magnet*10;  }
+.container .offset-by-eleven                { padding-left: @magnet*11;  }
+.container .offset-by-twelve                { padding-left: @magnet*12;  }
+
+// Prefix Extra Space >> 12 Columns
+.container .preset-by-one                   { padding-right: @magnet*1; }
+.container .preset-by-two                   { padding-right: @magnet*2;  }
+.container .preset-by-three                 { padding-right: @magnet*3;  }
+.container .preset-by-four                  { padding-right: @magnet*4;  }
+.container .preset-by-five                  { padding-right: @magnet*5;  }
+.container .preset-by-six                   { padding-right: @magnet*6;  }
+.container .preset-by-seven                 { padding-right: @magnet*7;  }
+.container .preset-by-eight                 { padding-right: @magnet*8;  }
+.container .preset-by-nine                  { padding-right: @magnet*9;  }
+.container .preset-by-ten                   { padding-right: @magnet*10;  }
+.container .preset-by-eleven                { padding-right: @magnet*11;  }
+.container .preset-by-twelve                { padding-right: @magnet*12;  }
+
+// Push & Pull Space
+.push_1, .pull_1,
+.push_2, .pull_2,
+.push_3, .pull_3,
+.push_4, .pull_4,
+.push_5, .pull_5,
+.push_6, .pull_6,
+.push_7, .pull_7,
+.push_8, .pull_8,
+.push_9, .pull_9,
+.push_10, .pull_10,
+.push_11, .pull_11,
+.push_12, .pull_12  { position: relative; }
+
+.push_1 { left: @magnet*1; }
+.push_2 { left: @magnet*2; }
+.push_3 { left: @magnet*3; }
+.push_4 { left: @magnet*4; }
+.push_5 { left: @magnet*5; }
+.push_6 { left: @magnet*6; }
+.push_7 { left: @magnet*7; }
+.push_8 { left: @magnet*8; }
+.push_9 { left:  @magnet*9; }
+.push_10 {  left: @magnet*10; }
+.push_11 {  left: @magnet*11; }
+
+.pull_1 { left: -@magnet*1; }
+.pull_2 { left: -@magnet*2; }
+.pull_3 { left: -@magnet*3; }
+.pull_4 { left: -@magnet*4; }
+.pull_5 { left: -@magnet*5; }
+.pull_6 { left: -@magnet*6; }
+.pull_7 { left: -@magnet*7; }
+.pull_8 { left: -@magnet*8; }
+.pull_9 { left:  -@magnet*9; }
+.pull_10 {  left: -@magnet*10; }
+.pull_11 {  left: -@magnet*11; }

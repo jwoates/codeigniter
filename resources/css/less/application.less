@@ -1,0 +1,296 @@
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+* {
+  outline: none;
+}
+body {
+  background-color: #fff;
+  color: #5c5c5c;
+  width:810px;
+  overflow:hidden;
+  font-family: 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+}
+.clear{clear:both;}
+
+/* Type */
+body, p, h1, h2, h3, h4 { margin:0; padding:0; }
+
+p { }
+h1 { font: 17px/17px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h2 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h3 { font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h4 { }
+
+/* Layout */
+header.global-header {
+  background: url(../images/header.jpg) no-repeat;
+  height: 200px;
+}
+.main-page {
+  margin: 20px 0;
+}
+
+/* Header */
+#shareBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font: 13px/13px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  letter-spacing: 2px;
+  background-color: #85c513;
+
+}
+
+
+/* Age Gate */
+.age-gate {
+  background:url(../images/age_gate_bg.jpg) no-repeat #8fc854;
+  min-height: 350px;
+  padding-top: 80px;
+  h2 {
+    margin-bottom:15px;
+  }
+  input {
+    font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; 
+    color: #848589;
+    text-align: center;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #c2d6ad;
+    width: 56px;
+  }
+
+  #submit {
+    display: block;
+    position: relative;
+    top: 35px;
+    left: 220px;
+    border: 1px solid #5b5b5b;
+    background-color: #666666;
+    color: #fff;
+    width: 110px;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+
+
+/* All Pages */
+
+
+/* Videos */
+
+.video-section {
+  border:1px solid #e4e4e4;
+  padding-bottom: 10px;
+  header {
+    background-color: #8ec754;
+    padding: 5px 20px; 
+  }
+  span.icon {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin: 1px 15px 0px 0px;
+    background: url(../images/sprite.png) no-repeat -102px 0px;
+  }
+  h2 { 
+    letter-spacing: 3px;
+  }
+  .alpha {
+    float: left;
+    margin: 0 10px 0 10px;
+  }
+  
+}
+
+#videolist {
+  width: 240px;
+  height: 308px;
+  overflow: auto;
+  position: relative;
+  border:1px solid #e5e5e5;
+
+  a {
+    display: block;
+    padding: 10px;
+    color: #848589;
+    font-size: 13px;
+    text-decoration: none;
+    min-height: 46px;
+    &:hover { background-color: #8fc854; color: #fff; }
+  }
+  a.active {
+    background-color: #8fc854; color: #fff; 
+  }
+  img {
+    float: left;
+    margin-right: 10px;
+
+  }
+
+}
+
+// Scrollbars
+.jspDrag {
+  .border-radius (10px);
+  .box-shadow (inset 1px 1px 2px #3c9a02);
+  background: #77ba02;
+}
+
+/* Twitter Section */
+#twitterList {
+  height: 560px;
+}
+.twitter-section {
+  float: left;
+  border: 1px solid #e4e4e4;
+  margin: 20px 10px 0 0;
+  padding-bottom: 10px;
+  width: 545px;
+  header {
+    background-color: #8ec754;
+    padding: 5px 20px; 
+  }
+  span.icon {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin: 1px 15px 0px 0px;
+    background: url(../images/sprite.png) no-repeat -41px 0px;
+  }
+  h2 { 
+    letter-spacing: 3px;
+    span {
+      letter-spacing: normal;
+      font-size: 13px;
+    }
+  }
+  .tweet {
+    display: block;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px; 
+    img {
+      float: left;
+    }
+    p {
+      font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;
+      margin-left: 70px;
+      a {
+        color: #8ec754;
+        text-decoration: none;
+        &:hover { color: #2B9646;}
+      }
+    }
+    p.name {
+      font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      color: #5C5C5C; 
+    }
+    &:last-child { border-bottom: none; }
+  }
+}
+
+
+
+/* XBOX Events Section */
+.xbox-events-section {
+  overflow: hidden;
+  border:1px solid #e4e4e4;
+  margin: 20px 0 0 0;
+  width: 250px;
+  header {
+    background-color: #8ec754;
+    padding: 5px 20px; 
+  }
+  span.icon {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin: 1px 15px 0px 0px;
+    background: url(../images/sprite.png) no-repeat -73px 1px;
+  }
+  h3 { 
+    letter-spacing: 3px;
+  }
+  ul { margin:0; padding:0; list-style:none; 
+    li { 
+      font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      padding: 15px 15px 0 15px;
+      span { font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;}
+    }
+  }
+  .callout { padding: 15px;}
+}
+
+
+/* Photos */
+
+.photo-section {
+  border:1px solid #e4e4e4;
+  padding-bottom: 10px;
+  margin: 20px 0 0 0;
+  header {
+    background-color: #8ec754;
+    padding: 5px 20px; 
+    a {
+      float: right;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: normal;
+      font-size: 13px;
+      text-transform: uppercase;
+      span { 
+        display: inline-block;
+        height: 21px;
+        width: 35px;
+        background: url(../images/sprite.png) no-repeat -132px 5px; 
+      }
+  }
+  span.icon {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 31px;
+    margin: 1px 15px 0px 0px;
+    background: url(../images/sprite.png) no-repeat 0 0;
+  }
+  h2 { 
+    float: left;
+    letter-spacing: 3px;
+    }
+  }
+  .alpha {
+    float: left;
+    margin: 0 10px 0 10px;
+  }
+  
+}
+.theme-default .nivo-directionNav a {
+  .opacity (50);
+  .transition ( all .1s linear);
+  &:hover { .opacity (100);}
+}
+
+
+
+/* Footer */
+footer {
+  margin-top: 15px;
+  p.footer {
+    font-size: 12px;
+    width: 450px;
+  }
+}
+
+
+

@@ -1,0 +1,174 @@
+// Mobile
+@import 'css3.less';
+
+// General
+body, p, h1, h2, h3, h4, header, aside, ul, li { margin:0; padding:0;  }
+.clear { clear:both; }
+p { }
+h1 { font: 17px/17px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
+h2 { font: 10px/11px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
+h3 { font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
+h4 { }
+
+// Layout
+
+.gate-keeper {
+  .gradient (#bdd758, #8fc854);
+  min-height: 260px;
+  text-align: center;
+  h2 {
+    margin-bottom:15px;
+  }
+  input {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #day, #month, #year {
+    
+  }
+}
+
+.events-link {
+  padding: 0px;
+  margin: 0px;
+  span {
+    padding: 0px;
+    margin: 0px;
+    span {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+}
+
+
+
+/* Header */
+#shareBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font: 13px/13px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  letter-spacing: 2px;
+  background-color: #85c513;
+
+}
+
+/* Twitter Section */
+.twitter-section {
+  float: left;
+  margin: 0;
+  width: 100%;
+  header {
+    height: 30px;
+    background-color: #848589;
+     
+    aside {
+      float: left;
+      h2 {
+        text-align: left;
+        padding: 7px 0;
+        width: 210px;
+      }
+    }
+    aside.callout {
+      float: right;
+      span {
+        background-color: #646465;
+        height: 100%;
+        color: #fff;
+        padding: 10px 5px;
+        letter-spacing: normal;
+        font-size: 10px;
+        text-shadow: 0 0 0;
+      }
+    }
+  }
+  span.icon {
+    display: block;
+    float: left;
+    height: 17px;
+    width: 21px;
+    margin:5px 5px 0 5px;
+    background: url(../images/twitter_m.png) no-repeat;
+  }
+  h2 { 
+    letter-spacing: 1px;
+    padding-top:3px;
+    
+  }
+  // Tweets
+  li {
+    img {
+      padding:10px 0 10px 10px;
+    }
+      a {
+        color: #8ec754;
+        text-decoration: none;
+        &:hover { color: #2B9646;}
+        p {
+          font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;
+        }
+    }
+    p.name {
+      margin-top:4px;
+      font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      color: #5C5C5C; 
+    }
+    &:last-child { border-bottom: none; }
+  }
+    
+}
+
+
+// Video Section
+.ui-icon {
+  display: none;
+}
+
+.videolist {
+  li { padding: 25px 0 0 10px; }
+}
+
+.video-section {
+  float: left;
+  margin: 0;
+  width: 100%;
+  header {
+    height: 30px;
+    background-color: #848589;
+    aside {
+      span.icon {
+        display: block;
+        float: left;
+        height: 17px;
+        width: 21px;
+        margin: 5px 5px 0 5px;
+        background: url(../images/video_m.png) no-repeat;
+      }
+      h2 {
+        padding: 7px 0;
+        text-align: left;
+      }
+    } 
+  }  
+}
+
+
+
+
+
+
+// Footer 
+.footer {
+
+  p.copyright {
+    font-size: 9px;
+    text-align: center;
+    padding:3px 0;
+  }
+}

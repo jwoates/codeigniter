@@ -1,19 +1,32 @@
-    <!-- video player -->
-    <div class="alpha">
-    <h3>Video Playlist</h3>
-      <div id="video-wrap" class="yt">
-        <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="327" width="536" src="https://www.youtube.com/embed/nsWyP0LBikI?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
-        <span class="video-title">das videoslogen!</span>
-      </div>
-    </div>
+<section class="video-section">
+    <header>
+    <aside>
+      <span class="icon"></span>
+      <h2>COMIC-CON VIDEOS</h2>
+    </aside>
+    
+  </header>
 
-    <!-- video list -->
-    <div class="beta">
-      <div id="yt-video-list" class="media-list yt" style="display: block; ">
-      <?php
-        foreach ($yt_playlist as $key => $value) {
-          echo '<a style="display:block;" href="#" data-yt-id="' . $value['id'] .'" ><img src="//img.youtube.com/vi/' . $value['id'] . '/default.jpg" /><span>' . $value['title'] . '</span></a>';
-        }
-      ?>
-      </div>
-    </div>
+
+  <ul data-role="listview" class="videolist">
+    <?php
+      foreach ($yt_playlist as $key => $value) {
+        echo '<li data-icon="arrow-r"><a href="http://youtu.be/'. $value['id'] .'" data-yt-id="' . $value['id'] .'" ><img src="//img.youtube.com/vi/' . $value['id'] . '/default.jpg" width="62" /><span>' . $value['title'] . '</span></a></li>';
+      }
+    ?>
+  </ul> 
+
+</section>
+
+<div data-role="footer" data-id="foo1" data-position="fixed" class="footer">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="/mobile/twitter" data-prefetch="true">TWITTER</a></li>
+      <li><a href="/mobile/video" data-prefetch="true" class="ui-btn-active ui-state-persist">VIDEOS</a></li>
+      <li><a href="/mobile/photo" data-prefetch="true">PHOTOS</a></li>
+      <li><a href="/mobile/event" data-prefetch="true" data-transition="slideup" class="events-link">XBOX EVENTS</a></li>
+    </ul>
+
+    <p class="copyright">The content contained in this app is ©2012 Microsoft Corporation. All rights reserved. See Terms of Use and Privacy &amp; Cookies.</p>
+  </div><!-- /navbar -->
+</div><!-- /footer -->
