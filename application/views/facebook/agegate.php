@@ -8,33 +8,27 @@
       echo $message;
     }else{
       echo form_open('agegate/authenticate');
-        $day = array(
-          'name'        => 'day',
-          'id'          => 'day',
-          'value'       => 'DD',
-          'maxlength'   => '2',
-          'size'        => '10'
-        );
-      echo form_input($day);
+      /* day */
+      $day = array();
+      for ($i=1; $i < 32; $i++) { 
+        $day["$i"] = $i;
+      }
+      echo form_dropdown('day', $day);
 
-        $month = array(
-          'name'        => 'month',
-          'id'          => 'month',
-          'value'       => 'MM',
-          'maxlength'   => '2',
-          'size'        => '10'
-        );
-      echo form_input($month);
+      /* month */
+      $month = array();
+      for ($i=1; $i < 13; $i++) { 
+        $month["$i"] = $i;
+      }
+      echo form_dropdown('month', $month);
 
-        $year = array(
-          'name'        => 'year',
-          'id'          => 'year',
-          'value'       => 'YYYY',
-          'maxlength'   => '4',
-          'size'        => '10'
-        );
-      echo form_input($year);      
-
+      /* year */
+      $year = array();
+      for ($i=1950; $i < 2013; $i++) { 
+        $year["$i"] = $i;
+      }
+      echo form_dropdown('year', $year);
+      
       echo form_submit('submit', 'Enter');
       echo form_close();
     }
