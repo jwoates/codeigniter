@@ -1,3 +1,11 @@
+<div data-role="header" data-theme="f" data-position="fixed" data-id="foo">
+  <img src="/resources/images/header_m.jpg" alt "XBOX ComicCon" />
+  <a href="#share" id="shareBtn" data-role="none">share on wall</a>
+  <a href="#" id="winBtn" data-role="none">ENTER TO WIN!</a>
+</div>
+
+
+
 <section class="video-section">
     <header>
     <aside>

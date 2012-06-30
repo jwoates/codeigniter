@@ -24,8 +24,7 @@ $(function(){
 
  //  });
 
-  
-
+  $('#videolist a:first-child').addClass('active');
 
  $('#videolist a').live('click', function(e) {
     var click, data;

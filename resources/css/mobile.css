@@ -36,6 +36,11 @@ h3 {
   color: #fff;
   text-shadow: 0 0 0;
 }
+/* Layout */
+header.global-header {
+  background: url(../images/header_m.jpg) no-repeat;
+  height: 125px;
+}
 .gate-keeper {
   background: #bdd758;
   background: -moz-linear-gradient(top, #bdd758 0%, #8fc854 100%);
@@ -44,8 +49,14 @@ h3 {
   background: -o-linear-gradient(top, #bdd758 0%, #8fc854 100%);
   background: -ms-linear-gradient(top, #bdd758 0%, #8fc854 100%);
   background: linear-gradient(top, #bdd758 0%, #8fc854 100%);
-  min-height: 260px;
+  min-height: 480px;
   text-align: center;
+  margin-top: -4px;
+}
+.gate-keeper .age-gate {
+  width: 250px;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 .gate-keeper h2 {
   margin-bottom: 15px;
@@ -69,15 +80,46 @@ h3 {
 /* Header */
 #shareBtn {
   position: absolute;
-  right: 0;
-  top: 0;
-  padding: 10px;
+  top: 5px;
+  left: 200px;
+  text-align: center;
+  padding: 7px;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
-  font: 13px/13px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-  letter-spacing: 2px;
+  font: 10px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  letter-spacing: 1px;
   background-color: #85c513;
+  -webkit-box-shadow: 1px 1px 3px #86878b;
+  -moz-box-shadow: 1px 1px 3px #86878b;
+  -o-box-shadow: 1px 1px 3px #86878b;
+  box-shadow: 1px 1px 3px #86878b;
+  text-shadow: 0 0 0;
+}
+#shareBtn:hover {
+  background-color: #77b011;
+}
+#winBtn {
+  position: absolute;
+  top: 45px;
+  left: 200px;
+  width: 96px;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font: 10px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  letter-spacing: 1px;
+  background-color: #848589;
+  -webkit-box-shadow: 1px 1px 3px #86878b;
+  -moz-box-shadow: 1px 1px 3px #86878b;
+  -o-box-shadow: 1px 1px 3px #86878b;
+  box-shadow: 1px 1px 3px #86878b;
+  text-shadow: 0 0 0;
+}
+#winBtn:hover {
+  background-color: #75767a;
 }
 /* Twitter Section */
 .twitter-section {
@@ -88,17 +130,28 @@ h3 {
 .twitter-section header {
   height: 30px;
   background-color: #848589;
+  margin-top: -5px;
 }
 .twitter-section header aside {
   float: left;
 }
+.twitter-section header aside span.icon {
+  display: block;
+  float: left;
+  height: 17px;
+  width: 21px;
+  margin: 5px 5px 0 5px;
+  background: url(../images/twitter_m.png) no-repeat;
+}
 .twitter-section header aside h2 {
   text-align: left;
-  padding: 7px 0;
+  letter-spacing: 1px;
+  padding-top: 7px;
   width: 210px;
 }
 .twitter-section header aside.callout {
   float: right;
+  margin-top: 2px;
 }
 .twitter-section header aside.callout span {
   background-color: #646465;
@@ -108,18 +161,6 @@ h3 {
   letter-spacing: normal;
   font-size: 10px;
   text-shadow: 0 0 0;
-}
-.twitter-section span.icon {
-  display: block;
-  float: left;
-  height: 17px;
-  width: 21px;
-  margin: 5px 5px 0 5px;
-  background: url(../images/twitter_m.png) no-repeat;
-}
-.twitter-section h2 {
-  letter-spacing: 1px;
-  padding-top: 3px;
 }
 .twitter-section li img {
   padding: 10px 0 10px 10px;
@@ -157,18 +198,137 @@ h3 {
 .video-section header {
   height: 30px;
   background-color: #848589;
+  margin-top: -5px;
 }
 .video-section header aside span.icon {
   display: block;
   float: left;
-  height: 17px;
+  height: 19px;
   width: 21px;
-  margin: 5px 5px 0 5px;
+  margin: 7px 5px 0 5px;
   background: url(../images/video_m.png) no-repeat;
 }
 .video-section header aside h2 {
-  padding: 7px 0;
+  padding-top: 10px;
   text-align: left;
+}
+/* Photo Section */
+.photo-section {
+  float: left;
+  margin: 0;
+  width: 100%;
+  min-height: 100px;
+}
+.photo-section header {
+  display: block;
+  height: 30px;
+  background-color: #848589;
+  margin-top: -4px;
+}
+.photo-section header aside {
+  float: left;
+}
+.photo-section header aside span.icon {
+  display: block;
+  float: left;
+  height: 17px;
+  width: 21px;
+  margin: 7px 5px 0 5px;
+  background: url(../images/photo_m.png) no-repeat;
+}
+.photo-section header aside h2 {
+  text-align: left;
+  letter-spacing: 1px;
+  padding-top: 10px;
+  width: 204px;
+}
+.photo-section header aside.callout {
+  float: right;
+  position: relative;
+}
+.photo-section header aside.callout span {
+  height: 100%;
+}
+.photo-section header aside.callout span a {
+  color: #fff !important;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-decoration: none;
+  text-shadow: 0 0 0;
+  padding: 11px 15px 8px 5px;
+  display: block;
+  background-color: #646465;
+}
+.photo-section header aside.callout span a:hover {
+  color: #bdd758;
+}
+.photo-section header aside.callout span a:active {
+  color: #bdd758;
+}
+.photo-section header aside.callout span .arrow-up {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid white;
+  position: absolute;
+  right: 3px;
+  top: 11px;
+}
+.photo-section .theme-default .nivo-directionNav a {
+  display: block;
+  width: 28px;
+  height: 49px;
+  background: url(../images/controls_m.png) no-repeat left;
+  text-indent: -9999px;
+  border: 0;
+}
+.photo-section .theme-default a.nivo-nextNav {
+  background-position: right;
+  right: 15px;
+}
+.photo-section .nivo-directionNav a {
+  top: 30%;
+}
+.events-section {
+  float: left;
+  margin: 0;
+  width: 100%;
+}
+.events-section header {
+  height: 30px;
+  background-color: #848589;
+  margin-top: -5px;
+}
+.events-section header aside span.icon {
+  display: block;
+  float: left;
+  height: 24px;
+  width: 21px;
+  margin: 4px 5px 0 5px;
+  background: url(../images/events_m.png) no-repeat;
+}
+.events-section header aside h2 {
+  padding-top: 10px;
+  text-align: left;
+}
+.events-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.events-section ul li {
+  font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  padding: 15px 15px 0 15px;
+  text-align: left;
+}
+.events-section ul li span {
+  font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+}
+.events-section .callout {
+  padding: 15px;
 }
 .footer p.copyright {
   font-size: 9px;

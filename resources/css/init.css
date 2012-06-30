@@ -334,7 +334,7 @@ h4 {
   padding: 0;
 }
 h1 {
-  font: 17px/17px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   color: #fff;
 }
 h2 {
@@ -366,6 +366,9 @@ header.global-header {
   letter-spacing: 2px;
   background-color: #85c513;
 }
+#shareBtn:hover {
+  background-color: #77b011;
+}
 /* Age Gate */
 .age-gate {
   background: url(../images/age_gate_bg.jpg) no-repeat #8fc854;
@@ -383,6 +386,21 @@ header.global-header {
   margin-right: 10px;
   border: 1px solid #c2d6ad;
   width: 56px;
+}
+.age-gate select {
+  border: 0;
+  color: #848589;
+  background-color: #fff;
+  font-family: 'SegoeBold';
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  appearance: none;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  width: 115px;
+  cursor: pointer;
+  outline: none;
 }
 .age-gate #submit {
   display: block;
@@ -406,6 +424,7 @@ header.global-header {
 .video-section header {
   background-color: #8ec754;
   padding: 5px 20px;
+  margin-bottom: 10px;
 }
 .video-section span.icon {
   display: block;
@@ -458,6 +477,12 @@ header.global-header {
   -o-box-shadow: inset 1px 1px 2px #3c9a02;
   box-shadow: inset 1px 1px 2px #3c9a02;
   background: #77ba02;
+  opacity: 0.7;
+  filter: alpha(opacity= 70 );
+}
+.jspDrag:hover {
+  opacity: 1;
+  filter: alpha(opacity= 100 );
 }
 /* Twitter Section */
 #twitterList {
@@ -561,16 +586,22 @@ header.global-header {
   margin: 20px 0 0 0;
 }
 .photo-section header {
+  position: relative;
   background-color: #8ec754;
   padding: 5px 20px;
 }
 .photo-section header a {
+  position: absolute;
+  right: -4px;
   float: right;
   color: #fff;
   text-decoration: none;
   letter-spacing: normal;
-  font-size: 13px;
+  font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   text-transform: uppercase;
+}
+.photo-section header a:hover {
+  color: #f2f2f2;
 }
 .photo-section header a span {
   display: inline-block;

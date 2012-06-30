@@ -11,13 +11,22 @@
   <meta property="og:image" content="https://c193490.ssl.cf1.rackcdn.com/E3-2012/share-image.png"/>
   <meta property="og:description" content="bla bla" />
   
+  <meta name="MobileOptimzied" content="width" />
+  <meta http-equiv="cleartype" content="on" />
+
   <link href="https://font-box.heroku.com/segoe.css" rel="stylesheet" type="text/css" media="screen" />
   <link rel="stylesheet"  href="/resources/css/jquery.mobile-1.1.0.css" />  
   <link rel="stylesheet"  href="/resources/css/jqm-docs.css" />  
+  <link rel="stylesheet"  href="/resources/css/jquery.mobile.fixedToolbar.polyfill.css" />  
   <link rel="stylesheet"  href="/resources/css/mobile.css?<?php echo rand(); ?>" />  
+  <link rel="stylesheet"  href="/resources/css/iemobile.css?<?php echo rand(); ?>" />  
 
+  <link href="/resources/js/nivo-slider.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
+
+ 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery.placeholder.min.js"></script>
+
 
   
 </head>
@@ -36,22 +45,13 @@
 
 
 <div data-role="page" class="type-interior">
-
-  <div data-role="header" data-theme="f" data-position="fixed" data-id="foo">
-    <img src="/resources/images/header_m.jpg" alt "XBOX ComicCon" />
-  </div>
-  
-  <div class="gate-keeper"> 
-    <?php
-      echo $yield;
-    ?> 
-  </div>
-
-
-
-
+ 
+  <?php
+    echo $yield;
+  ?> 
 
 </div>
+<script type="text/javascript" src="/resources/js/jquery.nivo.slider.pack.js?<?php echo rand(); ?>"></script> 
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -74,12 +74,15 @@
         });
       });
 
-      
-
       $('#slider').nivoSlider({
         controlNav: false,
-        directionNavHide: false
+        directionNavHide: false,
+        effect: 'fade'
       });  
+
+      $.mobile.ajaxEnabled = false;
+      
+      $('input[placeholder], textarea[placeholder]').placeholder();
 
     });
       
@@ -89,11 +92,14 @@
     FB.Canvas.setAutoResize();
   }
 </script>
+<script type="text/javascript" src="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.mobile.fixedToolbar.polyfill.js"></script>
 <script src="//www.youtube.com/player_api" type="text/javascript" charset="utf-8" async="" defer=""></script>
   <script>
     function resize() {
       FB.Canvas.setAutoResize();
     }
   </script>
+  <div class="clear"></div>
 </body>
 </html>

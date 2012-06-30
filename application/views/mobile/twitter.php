@@ -1,12 +1,25 @@
+<div data-role="header" data-theme="f" data-position="fixed" data-id="foo">
+  <img src="/resources/images/header_m.jpg" alt "XBOX ComicCon" />
+  <a href="#share" id="shareBtn" data-role="none">share on wall</a>
+  <a href="#" id="winBtn" data-role="none">ENTER TO WIN!</a>
+</div>
+
+
+
+
 <section class="twitter-section">
+
   <header>
+
     <aside>
       <span class="icon"></span>
       <h2>COMIC-CON TWITTER FEED</h2>
     </aside>
+
     <aside class="callout">
       <span>#xboxsdcc  #hashtag2</span>
    </aside>
+
   </header>
 
 <ul data-role="listview">

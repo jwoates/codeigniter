@@ -17,7 +17,7 @@ body {
 body, p, h1, h2, h3, h4 { margin:0; padding:0; }
 
 p { }
-h1 { font: 17px/17px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h1 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
 h2 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
 h3 { font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
 h4 { }
@@ -43,7 +43,9 @@ header.global-header {
   font: 13px/13px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   letter-spacing: 2px;
   background-color: #85c513;
-
+  &:hover {
+    background-color: #77b011;
+  }
 }
 
 
@@ -63,6 +65,21 @@ header.global-header {
     margin-right: 10px;
     border: 1px solid #c2d6ad;
     width: 56px;
+  }
+  select {
+    border: 0;
+    color: #848589;
+    background-color: #fff;
+    font-family: 'SegoeBold';
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    appearance: none;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    width: 115px;
+    cursor: pointer;
+    outline: none;
   }
 
   #submit {
@@ -92,7 +109,8 @@ header.global-header {
   padding-bottom: 10px;
   header {
     background-color: #8ec754;
-    padding: 5px 20px; 
+    padding: 5px 20px;
+    margin-bottom:10px;
   }
   span.icon {
     display: block;
@@ -144,6 +162,10 @@ header.global-header {
   .border-radius (10px);
   .box-shadow (inset 1px 1px 2px #3c9a02);
   background: #77ba02;
+  .opacity (70);
+  &:hover {
+    .opacity (100);
+  }
 }
 
 /* Twitter Section */
@@ -240,15 +262,21 @@ header.global-header {
   padding-bottom: 10px;
   margin: 20px 0 0 0;
   header {
+    position: relative;
     background-color: #8ec754;
     padding: 5px 20px; 
     a {
+      position: absolute;
+      right: -4px;
       float: right;
       color: #fff;
       text-decoration: none;
       letter-spacing: normal;
-      font-size: 13px;
+      font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
       text-transform: uppercase;
+      &:hover {
+        color: #f2f2f2;
+      }
       span { 
         display: inline-block;
         height: 21px;

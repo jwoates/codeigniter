@@ -115,7 +115,7 @@
     <header>
       <span class="icon"></span>
       <h2>COMIC-CON PHOTO GALLERY</h2>
-      <a href="">VIEW full gallery <span></span></a>
+      <a href="http://www.facebook.com/media/set/?set=a.10150575545216023.434660.16547831022&type=3" target="_blank">VIEW full gallery <span></span></a>
       <div class="clear"></div>
     </header>
 
