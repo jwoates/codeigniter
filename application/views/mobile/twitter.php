@@ -42,7 +42,9 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
 <ul data-role="listview">
       
 <?php
+$i = 0;
 foreach ($twitter_approved_feed->entry as $entry) {
+  if($i >= 30) return false;
   $str = $entry->title;
   preg_match('/(http:\/\/[^\s]+)/', $str, $text);
   if($text){
@@ -55,6 +57,7 @@ foreach ($twitter_approved_feed->entry as $entry) {
           . $entry->author->name . '" src="' . $entry->link[1]['href'] . '" /><p class="name">' . $name . '</p><p>' . linkify_twitter_status($str) . '</p>
         </li>';
 }
+$i++;
 ?>
 <?php
 function linkify_twitter_status($status_text)
