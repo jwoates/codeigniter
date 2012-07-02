@@ -39,7 +39,10 @@ class Mobile extends CI_Controller {
         $this->zend->load('Zend/Gdata/YouTube');
         $this->yt = new Zend_Gdata_YouTube();
         $this->yt->setMajorProtocolVersion(2);
-        $url = 'http://gdata.youtube.com/feeds/api/playlists/1043609265A2F46F?v=2';
+        # test
+        #$url = 'http://gdata.youtube.com/feeds/api/playlists/1043609265A2F46F?v=2';
+        # live
+        $url = 'http://gdata.youtube.com/feeds/api/playlists/0A653148CC3DE1CD?v=2';
         $videoFeed = $this->yt->getPlaylistVideoFeed($url);
         
         // Print out metadata for each video in the playlist

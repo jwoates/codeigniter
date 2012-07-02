@@ -16,7 +16,7 @@
     <!-- video player -->
     <div class="alpha">
       <div id="video-wrap" class="yt">
-        <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="308" width="533" src="https://www.youtube.com/embed/nsWyP0LBikI?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
+        <iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="308" width="533" src="https://www.youtube.com/embed/_oICDuufQxs?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>
         <!-- <span class="video-title">das videoslogen!</span> -->
       </div>
     </div>
@@ -41,7 +41,9 @@
 
     <div id="twitterList">
         <?php
+        $i = 0;
         foreach ($twitter_approved_feed->entry as $entry) {
+          if($i >= 30) return false;
           $str = $entry->title;
           preg_match('/(http:\/\/[^\s]+)/', $str, $text);
           if($text){
@@ -56,7 +58,7 @@
                 </div>';
         }
 
-
+        $i++;
         ?>
 
         <?php
