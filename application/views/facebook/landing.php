@@ -41,7 +41,9 @@
 
     <div id="twitterList">
         <?php
+        $i = 0;
         foreach ($twitter_approved_feed->entry as $entry) {
+          if($i >= 30) return false;
           $str = $entry->title;
           preg_match('/(http:\/\/[^\s]+)/', $str, $text);
           if($text){
@@ -56,7 +58,7 @@
                 </div>';
         }
 
-
+        $i++;
         ?>
 
         <?php
