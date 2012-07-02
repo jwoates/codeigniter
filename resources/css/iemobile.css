@@ -1,0 +1,8 @@
+/* IE MOBILE */
+
+#forieonly {
+  display: none;
+}
+.activate {
+  display: block !important;
+}

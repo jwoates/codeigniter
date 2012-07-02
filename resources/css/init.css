@@ -1,0 +1,653 @@
+/*-----------------------------------------------------------------------
+
+★		Style:									Facebook Tab & Mobile
+★   Description:            XBOX Sandiego ComicCon International
+★   Version:                1.0 (6-28-2012)
+★   Website:                http://xbox.com
+★   Author:                 Roundhouse Agency
+★   Author URL:             http://roundhouseagency.com
+★   Phone:                  503.287.0398
+
+//-----------------------------------------------------------------------*/
+/*
+// ==========================================================================
+// ★ Grid.less ★
+// ==========================================================================
+*/
+body {
+  width: 100%;
+  *zoom: 1;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+.row {
+  margin-bottom: 20px;
+}
+.container {
+  position: relative;
+  width: 810px;
+  margin: 0 auto;
+  padding: 0;
+}
+.columns.alpha {
+  margin-left: 0;
+}
+.columns.omega {
+  margin-right: 0;
+}
+.alpha.omega {
+  margin-left: 0;
+  margin-right: 0;
+}
+.container .one.column,
+.container .one.columns {
+  display: inline;
+  float: left;
+  width: 115px;
+  margin: 0 10px;
+}
+.container .two.columns {
+  display: inline;
+  float: left;
+  width: 250px;
+  margin: 0 10px;
+}
+.container .three.columns {
+  display: inline;
+  float: left;
+  width: 385px;
+  margin: 0 10px;
+}
+.container .four.columns {
+  display: inline;
+  float: left;
+  width: 520px;
+  margin: 0 10px;
+}
+.container .five.columns {
+  display: inline;
+  float: left;
+  width: 655px;
+  margin: 0 10px;
+}
+.container .six.columns {
+  display: inline;
+  float: left;
+  width: 790px;
+  margin: 0 10px;
+}
+.container .seven.columns {
+  display: inline;
+  float: left;
+  width: 925px;
+  margin: 0 10px;
+}
+.container .eight.columns {
+  display: inline;
+  float: left;
+  width: 1060px;
+  margin: 0 10px;
+}
+.container .nine.columns {
+  display: inline;
+  float: left;
+  width: 1195px;
+  margin: 0 10px;
+}
+.container .ten.columns {
+  display: inline;
+  float: left;
+  width: 1330px;
+  margin: 0 10px;
+}
+.container .eleven.columns {
+  display: inline;
+  float: left;
+  width: 1465px;
+  margin: 0 10px;
+}
+.container .twelve.columns {
+  display: inline;
+  float: left;
+  width: 1600px;
+  margin: 0 10px;
+}
+.container .offset-by-one {
+  padding-left: 135px;
+}
+.container .offset-by-two {
+  padding-left: 270px;
+}
+.container .offset-by-three {
+  padding-left: 405px;
+}
+.container .offset-by-four {
+  padding-left: 540px;
+}
+.container .offset-by-five {
+  padding-left: 675px;
+}
+.container .offset-by-six {
+  padding-left: 810px;
+}
+.container .offset-by-seven {
+  padding-left: 945px;
+}
+.container .offset-by-eight {
+  padding-left: 1080px;
+}
+.container .offset-by-nine {
+  padding-left: 1215px;
+}
+.container .offset-by-ten {
+  padding-left: 1350px;
+}
+.container .offset-by-eleven {
+  padding-left: 1485px;
+}
+.container .offset-by-twelve {
+  padding-left: 1620px;
+}
+.container .preset-by-one {
+  padding-right: 135px;
+}
+.container .preset-by-two {
+  padding-right: 270px;
+}
+.container .preset-by-three {
+  padding-right: 405px;
+}
+.container .preset-by-four {
+  padding-right: 540px;
+}
+.container .preset-by-five {
+  padding-right: 675px;
+}
+.container .preset-by-six {
+  padding-right: 810px;
+}
+.container .preset-by-seven {
+  padding-right: 945px;
+}
+.container .preset-by-eight {
+  padding-right: 1080px;
+}
+.container .preset-by-nine {
+  padding-right: 1215px;
+}
+.container .preset-by-ten {
+  padding-right: 1350px;
+}
+.container .preset-by-eleven {
+  padding-right: 1485px;
+}
+.container .preset-by-twelve {
+  padding-right: 1620px;
+}
+.push_1,
+.pull_1,
+.push_2,
+.pull_2,
+.push_3,
+.pull_3,
+.push_4,
+.pull_4,
+.push_5,
+.pull_5,
+.push_6,
+.pull_6,
+.push_7,
+.pull_7,
+.push_8,
+.pull_8,
+.push_9,
+.pull_9,
+.push_10,
+.pull_10,
+.push_11,
+.pull_11,
+.push_12,
+.pull_12 {
+  position: relative;
+}
+.push_1 {
+  left: 135px;
+}
+.push_2 {
+  left: 270px;
+}
+.push_3 {
+  left: 405px;
+}
+.push_4 {
+  left: 540px;
+}
+.push_5 {
+  left: 675px;
+}
+.push_6 {
+  left: 810px;
+}
+.push_7 {
+  left: 945px;
+}
+.push_8 {
+  left: 1080px;
+}
+.push_9 {
+  left: 1215px;
+}
+.push_10 {
+  left: 1350px;
+}
+.push_11 {
+  left: 1485px;
+}
+.pull_1 {
+  left: -135px;
+}
+.pull_2 {
+  left: -270px;
+}
+.pull_3 {
+  left: -405px;
+}
+.pull_4 {
+  left: -540px;
+}
+.pull_5 {
+  left: -675px;
+}
+.pull_6 {
+  left: -810px;
+}
+.pull_7 {
+  left: -945px;
+}
+.pull_8 {
+  left: -1080px;
+}
+.pull_9 {
+  left: -1215px;
+}
+.pull_10 {
+  left: -1350px;
+}
+.pull_11 {
+  left: -1485px;
+}
+#flexbox .display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+}
+::selection {
+  background-color: #E13300;
+  color: white;
+}
+::moz-selection {
+  background-color: #E13300;
+  color: white;
+}
+::webkit-selection {
+  background-color: #E13300;
+  color: white;
+}
+* {
+  outline: none;
+}
+body {
+  background-color: #fff;
+  color: #5c5c5c;
+  width: 810px;
+  overflow: hidden;
+  font-family: 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+}
+.clear {
+  clear: both;
+}
+/* Type */
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #fff;
+}
+h2 {
+  font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #fff;
+}
+h3 {
+  font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #fff;
+}
+/* Layout */
+header.global-header {
+  background: url(../images/header.jpg) no-repeat;
+  height: 200px;
+}
+.main-page {
+  margin: 20px 0;
+}
+/* Header */
+#shareBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font: 13px/13px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  letter-spacing: 2px;
+  background-color: #85c513;
+}
+#shareBtn:hover {
+  background-color: #77b011;
+}
+/* Age Gate */
+.age-gate {
+  background: url(../images/age_gate_bg.jpg) no-repeat #8fc854;
+  min-height: 350px;
+  padding-top: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+.age-gate h2 {
+  margin-bottom: 15px;
+}
+.age-gate input {
+  font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+  text-align: center;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #c2d6ad;
+  width: 56px;
+}
+.age-gate select {
+  border: 0;
+  background-color: #fff;
+  font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  margin-right: 10px;
+  padding: 10px 30px 10px 30px;
+}
+.age-gate #submit {
+  border: 1px solid #5b5b5b;
+  background-color: #666666;
+  color: #fff;
+  width: 110px;
+  margin-top: 10px;
+}
+.age-gate #submit:hover {
+  color: #ccc;
+}
+/* All Pages */
+/* Videos */
+.video-section {
+  border: 1px solid #e4e4e4;
+  padding-bottom: 10px;
+}
+.video-section header {
+  background-color: #8ec754;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+}
+.video-section span.icon {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 25px;
+  margin: 1px 15px 0px 0px;
+  background: url(../images/sprite.png) no-repeat -102px 0px;
+}
+.video-section h2 {
+  letter-spacing: 3px;
+}
+.video-section .alpha {
+  float: left;
+  margin: 0 10px 0 10px;
+}
+#videolist {
+  width: 240px;
+  height: 308px;
+  overflow: auto;
+  position: relative;
+  border: 1px solid #e5e5e5;
+}
+#videolist a {
+  display: block;
+  padding: 10px;
+  color: #848589;
+  font-size: 13px;
+  text-decoration: none;
+  min-height: 46px;
+}
+#videolist a:hover {
+  background-color: #8fc854;
+  color: #fff;
+}
+#videolist a.active {
+  background-color: #8fc854;
+  color: #fff;
+}
+#videolist img {
+  float: left;
+  margin-right: 10px;
+}
+.jspDrag {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 2px #3c9a02;
+  -moz-box-shadow: inset 1px 1px 2px #3c9a02;
+  -o-box-shadow: inset 1px 1px 2px #3c9a02;
+  box-shadow: inset 1px 1px 2px #3c9a02;
+  background: #77ba02;
+  opacity: 0.7;
+  filter: alpha(opacity= 70 );
+}
+.jspDrag:hover {
+  opacity: 1;
+  filter: alpha(opacity= 100 );
+}
+/* Twitter Section */
+#twitterList {
+  height: 560px;
+}
+.twitter-section {
+  float: left;
+  border: 1px solid #e4e4e4;
+  margin: 20px 10px 0 0;
+  padding-bottom: 10px;
+  width: 545px;
+}
+.twitter-section header {
+  background-color: #8ec754;
+  padding: 5px 20px;
+}
+.twitter-section span.icon {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 25px;
+  margin: 1px 15px 0px 0px;
+  background: url(../images/sprite.png) no-repeat -41px 0px;
+}
+.twitter-section h2 {
+  letter-spacing: 3px;
+}
+.twitter-section h2 span {
+  letter-spacing: normal;
+  font-size: 13px;
+}
+.twitter-section .tweet {
+  display: block;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 15px;
+}
+.twitter-section .tweet img {
+  float: left;
+}
+.twitter-section .tweet p {
+  font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+  margin-left: 70px;
+}
+.twitter-section .tweet p a {
+  color: #8ec754;
+  text-decoration: none;
+}
+.twitter-section .tweet p a:hover {
+  color: #2B9646;
+}
+.twitter-section .tweet p.name {
+  font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #5C5C5C;
+}
+.twitter-section .tweet:last-child {
+  border-bottom: none;
+}
+/* XBOX Events Section */
+.xbox-events-section {
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  margin: 20px 0 0 0;
+  width: 250px;
+}
+.xbox-events-section header {
+  background-color: #8ec754;
+  padding: 5px 20px;
+}
+.xbox-events-section span.icon {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 25px;
+  margin: 1px 15px 0px 0px;
+  background: url(../images/sprite.png) no-repeat -73px 1px;
+}
+.xbox-events-section h3 {
+  letter-spacing: 3px;
+}
+.xbox-events-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.xbox-events-section ul li {
+  font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  padding: 15px 15px 0 15px;
+}
+.xbox-events-section ul li span {
+  font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+}
+.xbox-events-section .callout {
+  padding: 15px;
+}
+/* Photos */
+.photo-section {
+  border: 1px solid #e4e4e4;
+  padding-bottom: 10px;
+  margin: 20px 0 0 0;
+}
+.photo-section header {
+  position: relative;
+  background-color: #8ec754;
+  padding: 5px 20px;
+}
+.photo-section header a {
+  position: absolute;
+  right: -4px;
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: normal;
+  font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  text-transform: uppercase;
+}
+.photo-section header a:hover {
+  color: #f2f2f2;
+}
+.photo-section header a span {
+  display: inline-block;
+  height: 21px;
+  width: 35px;
+  background: url(../images/sprite.png) no-repeat -132px 5px;
+}
+.photo-section header span.icon {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 31px;
+  margin: 1px 15px 0px 0px;
+  background: url(../images/sprite.png) no-repeat 0 0;
+}
+.photo-section header h2 {
+  float: left;
+  letter-spacing: 3px;
+}
+.photo-section .alpha {
+  float: left;
+  margin: 0 10px 0 10px;
+}
+.theme-default .nivo-directionNav a {
+  opacity: 0.5;
+  filter: alpha(opacity= 50 );
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.theme-default .nivo-directionNav a:hover {
+  opacity: 1;
+  filter: alpha(opacity= 100 );
+}
+/* Footer */
+footer {
+  margin-top: 15px;
+}
+footer p.footer {
+  font-size: 12px;
+  width: 450px;
+}
+footer p.footer a {
+  color: #8ec754;
+  text-decoration: none;
+  font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+}
+footer p.footer a:hover {
+  color: #2B9646;
+}
