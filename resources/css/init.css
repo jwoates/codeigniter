@@ -489,7 +489,6 @@ header.global-header {
   float: left;
   border: 1px solid #e4e4e4;
   margin: 20px 10px 0 0;
-  padding-bottom: 10px;
   width: 545px;
 }
 .twitter-section header {
@@ -509,7 +508,7 @@ header.global-header {
 }
 .twitter-section h2 span {
   letter-spacing: normal;
-  font-size: 13px;
+  font-size: 11px;
 }
 .twitter-section .tweet {
   display: block;

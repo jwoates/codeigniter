@@ -36,7 +36,7 @@
   <section class="twitter-section">
     <header>
       <span class="icon"></span>
-      <h2>COMIC-CON TWITTER FEED &nbsp;&nbsp;&nbsp;<span>#xboxsdcc  #hashtag2</span></h2>
+      <h2>COMIC-CON TWITTER FEED &nbsp;&nbsp;&nbsp;<span><a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank">#XboxSDCC m#NerdHQ</a> <a href="https://twitter.com/#!/thenerdmachine/" target="_blank">@thenerdmachine</a></span></h2>
     </header>
 
     <div id="twitterList">

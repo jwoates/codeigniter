@@ -12,6 +12,7 @@
     }else{
       echo form_open('agegate/authenticate');
       /* day */
+
       $day = array('value' => 'DD');
       for ($i=1; $i < 32; $i++) { 
         $day["$i"] = $i;
