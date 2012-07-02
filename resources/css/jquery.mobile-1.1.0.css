@@ -11,7 +11,7 @@
 /* A
 -----------------------------------------------------------------------------------------------------------*/
 .ui-bar-a {
-	border: 1px solid 		#333 /*{a-bar-border}*/;
+	border: 1px solid 		#ccc /*{a-bar-border}*/;
 	background: 			#111111 /*{a-bar-background-color}*/;
 	color: 					#ffffff /*{a-bar-color}*/;
 	font-weight: bold;
@@ -88,7 +88,11 @@
     color: #2489CE /*{a-body-link-visited}*/;
 }
 .ui-btn-up-a {
-	border: 1px solid 		#859644 /*{a-bup-border}*/;
+	-webkit-box-shadow: -1px 0px 0 #fff, -2px 0px 0 #7d9342;
+    -moz-box-shadow: -1px 0px 0 #fff, -2px 0px 0 #7d9342;
+    -o-box-shadow: -1px 0px 0 #fff, -2px 0px 0 #7d9342;
+    box-shadow: -1px 0px 0 #fff, -2px 0px 0 #7d9342;
+    /*border: 1px solid #7d9342;*/
 	background: 			#c4d941 /*{a-bup-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{a-bup-color}*/;
@@ -99,6 +103,7 @@
 	background-image:     -ms-linear-gradient( #c4d941 /*{a-bup-background-start}*/, #93c73e /*{a-bup-background-end}*/); /* IE10 */
 	background-image:      -o-linear-gradient( #c4d941 /*{a-bup-background-start}*/, #93c73e /*{a-bup-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #c4d941 /*{a-bup-background-start}*/, #93c73e /*{a-bup-background-end}*/);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4d941', endColorstr='#93c73e');
 }
 .ui-btn-up-a a.ui-link-inherit {
 	color: 					#fff /*{a-bup-color}*/;
@@ -314,7 +319,7 @@
 }
 .ui-body-c,
 .ui-overlay-c {
-	border: 1px solid 		#aaa /*{c-body-border}*/;
+	border-bottom: 1px solid 		#aaa /*{c-body-border}*/;
 	color: 					#333333 /*{c-body-color}*/;
 	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #fff /*{c-body-shadow-color}*/;
 	background: 			#f9f9f9 /*{c-body-background-color}*/;
@@ -324,6 +329,7 @@
 	background-image:     -ms-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eeeeee /*{c-body-background-end}*/); /* IE10 */
 	background-image:      -o-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eeeeee /*{c-body-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eeeeee /*{c-body-background-end}*/);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#eeeeee');
 }
 .ui-overlay-c {
 	background-image: none;
@@ -354,9 +360,9 @@
 }
 .ui-btn-up-c {
 	border: 1px solid 		#ccc /*{c-bup-border}*/;
-	background: 			#eee /*{c-bup-background-color}*/;
+	background: 			#c5d941 /*{c-bup-background-color}*/;
 	font-weight: bold;
-	color: 					#222 /*{c-bup-color}*/;
+	color: 					#ccc /*{c-bup-color}*/;
 	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #ffffff /*{c-bup-shadow-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff /*{c-bup-background-start}*/), to( #f1f1f1 /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient( #ffffff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
@@ -364,6 +370,7 @@
 	background-image:     -ms-linear-gradient( #ffffff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* IE10 */
 	background-image:      -o-linear-gradient( #ffffff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #ffffff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c5d941', endColorstr='#92c73e');
 }
 .ui-btn-up-c a.ui-link-inherit {
 	color: 					#2F3E46 /*{c-bup-color}*/;
@@ -484,17 +491,18 @@
     color: #2489CE /*{d-body-link-visited}*/;
 }
 .ui-btn-up-d {
-	border: 1px solid 		#bbb /*{d-bup-border}*/;
-	background: 			#fff /*{d-bup-background-color}*/;
+	border: 1px solid 		#ccc /*{c-bup-border}*/;
+	background: 			#c5d941 /*{c-bup-background-color}*/;
 	font-weight: bold;
-	color: 					#333 /*{d-bup-color}*/;
-	text-shadow: 0 /*{d-bup-shadow-x}*/ 1px /*{d-bup-shadow-y}*/ 0 /*{d-bup-shadow-radius}*/ #fff /*{d-bup-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #fafafa), to( #f6f6f6 /*{d-bup-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #fafafa /*{d-bup-background-start}*/, #f6f6f6 /*{d-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #fafafa /*{d-bup-background-start}*/, #f6f6f6 /*{d-bup-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #fafafa /*{d-bup-background-start}*/, #f6f6f6 /*{d-bup-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #fafafa /*{d-bup-background-start}*/, #f6f6f6 /*{d-bup-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #fafafa /*{d-bup-background-start}*/, #f6f6f6 /*{d-bup-background-end}*/);
+	color: 					#fff /*{c-bup-color}*/;
+	text-shadow: 0 /*{c-bup-shadow-x}*/ 0 /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff /*{c-bup-background-start}*/), to( #f1f1f1 /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #c5d941 /*{c-bup-background-start}*/, #92c73e /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #c5d941 /*{c-bup-background-start}*/, #92c73e /*{c-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #c5d941 /*{c-bup-background-start}*/, #92c73e /*{c-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #c5d941 /*{c-bup-background-start}*/, #92c73e /*{c-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #c5d941 /*{c-bup-background-start}*/, #92c73e /*{c-bup-background-end}*/);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c5d941', endColorstr='#92c73e');
 }
 .ui-btn-up-d a.ui-link-inherit {
 	color: 					#333 /*{d-bup-color}*/;
@@ -685,14 +693,16 @@ a.ui-link-inherit {
 	cursor: pointer;
 	text-shadow: 0 /*{global-active-shadow-x}*/ 1px /*{global-active-shadow-y}*/ 1px /*{global-active-shadow-radius}*/ #85868a /*{global-active-shadow-color}*/;
 	text-decoration: none;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #b9babc /*{global-active-background-start}*/), to( #85868a /*{global-active-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #b9babc /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #b9babc /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #b9babc /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #b9babc /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #b9babc /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #bcbdbf /*{global-active-background-start}*/), to( #85868a /*{global-active-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #bcbdbf /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #bcbdbf /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #bcbdbf /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #bcbdbf /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #bcbdbf /*{global-active-background-start}*/, #85868a /*{global-active-background-end}*/);
 	font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcbdbf', endColorstr='#85868a');
 }
+
 .ui-btn-active a.ui-link-inherit {
 	color: 					#fff /*{global-active-color}*/;
 }
@@ -974,11 +984,7 @@ a.ui-link-inherit {
 	-webkit-border-bottom-left-radius: 	1em /*{global-radii-buttons}*/;
 	border-bottom-left-radius: 			1em /*{global-radii-buttons}*/;
 }
-.ui-btn-corner-all {
-	-moz-border-radius: 				1em /*{global-radii-buttons}*/;
-	-webkit-border-radius: 				1em /*{global-radii-buttons}*/;
-	border-radius: 						1em /*{global-radii-buttons}*/;
-}
+
 /* radius clip workaround for cleaning up corner trapping */
 .ui-corner-tl,
 .ui-corner-tr,
@@ -1724,7 +1730,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-navbar-collapsed ul { float: left; width: 75%; margin-right: -2px; }
 .ui-navbar-collapsed .ui-navbar-toggle { float: left; width: 25%; }
 .ui-navbar li.ui-navbar-truncate { position: absolute; left: -9999px; top: -9999px; }
-.ui-navbar li .ui-btn, .ui-navbar .ui-navbar-toggle .ui-btn { display: block; font-size: 12px; text-align: center; margin: 0; border-right-width: 0; max-width: 100%; }
+.ui-navbar li .ui-btn, .ui-navbar .ui-navbar-toggle .ui-btn { display: block; font-size: 9px; text-align: center; margin: 0; border-right-width: 0; max-width: 100%; }
 .ui-navbar li .ui-btn {  margin-right: -1px; }
 .ui-navbar li .ui-btn:last-child { margin-right: 0; }
 .ui-header .ui-navbar li .ui-btn, .ui-header .ui-navbar .ui-navbar-toggle .ui-btn,
@@ -1759,7 +1765,6 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-btn-text { position: relative; z-index: 1; width: 100%; }
 .ui-btn-icon-notext .ui-btn-text { position: absolute; left: -9999px; }
 .ui-btn-icon-left .ui-btn-inner { padding-left: 40px; }
-.ui-btn-icon-right .ui-btn-inner { padding-right: 40px; }
 .ui-btn-icon-top .ui-btn-inner { padding-top: 40px; }
 .ui-btn-icon-bottom .ui-btn-inner { padding-bottom: 40px; }
 .ui-header .ui-btn-icon-left .ui-btn-inner,
@@ -1917,22 +1922,20 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 @media all and (min-width: 450px){
 	.ui-field-contain, .ui-mobile fieldset.ui-field-contain { border-width: 0; padding: 0; margin: 1em 0; }
 }
-.ui-select { display: block; position: relative; }
+
+
+
+.ui-select { display: block; position: relative; float: left; }
 .ui-select select { position: absolute; left: -9999px; top: -9999px; }
-.ui-select .ui-btn { overflow: hidden; opacity: 1; margin: 0; }
-/* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit”—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
+.ui-select .ui-btn { overflow: hidden; opacity: 1; }
 .ui-select .ui-btn select { cursor: pointer; -webkit-appearance: button; left: 0; top:0; width: 100%;  min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); z-index: 2; }
 .ui-select .ui-disabled { opacity: .3; }
 @-moz-document url-prefix() {.ui-select .ui-btn select { opacity: 0.0001; }}
 .ui-select .ui-btn select.ui-select-nativeonly { opacity: 1; text-indent: 0; }
-.ui-select .ui-btn-icon-right .ui-btn-inner { padding-right: 45px; } 
 .ui-select .ui-btn-icon-right .ui-icon { right: 15px;  }
 .ui-select .ui-mini.ui-btn-icon-right .ui-icon { right: 7px;  }
-/* labels */
 label.ui-select { font-size: 16px; line-height: 1.4;  font-weight: normal; margin: 0 0 .3em; display: block; }
-/*listbox*/
 .ui-select .ui-btn-text, .ui-selectmenu .ui-btn-text { display: block; min-height: 1em; overflow: hidden !important;
-/* This !important is required for iPad Safari specifically. See https://github.com/jquery/jquery-mobile/issues/2647 */ }
 .ui-select .ui-btn-text { text-overflow: ellipsis; }
 .ui-selectmenu { position: absolute; padding: 0; z-index: 1100 !important; width: 80%; max-width: 350px; padding: 6px; }
 .ui-selectmenu .ui-listview { margin: 0; }
@@ -1947,8 +1950,10 @@ label.ui-select { font-size: 16px; line-height: 1.4;  font-weight: normal; margi
 	.ui-field-contain label.ui-select { vertical-align: top;  display: inline-block;  width: 20%;  margin: 0 2% 0 0; }
 	.ui-field-contain .ui-select { width: 60%; display: inline-block; }
 }	
-/* when no placeholder is defined in a multiple select, the header height doesn't even extend past the close button.  this shim's content in there */
 .ui-selectmenu .ui-header h1:after { content: '.'; visibility: hidden; }
+
+
+
 label.ui-input-text { font-size: 16px; line-height: 1.4; display: block; font-weight: normal; margin: 0 0 .3em; }
 input.ui-input-text, textarea.ui-input-text { background-image: none; padding: .4em; line-height: 1.4; font-size: 16px; display: block; width: 97%; outline: 0; }
 .ui-header input.ui-input-text,

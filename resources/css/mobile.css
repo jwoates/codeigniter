@@ -49,8 +49,8 @@ header.global-header {
   background: -o-linear-gradient(top, #bdd758 0%, #8fc854 100%);
   background: -ms-linear-gradient(top, #bdd758 0%, #8fc854 100%);
   background: linear-gradient(top, #bdd758 0%, #8fc854 100%);
-  min-height: 480px;
   text-align: center;
+  padding-bottom: 50px;
   margin-top: -4px;
 }
 .gate-keeper .age-gate {
@@ -61,9 +61,20 @@ header.global-header {
 .gate-keeper h2 {
   margin-bottom: 15px;
 }
-.gate-keeper input {
-  text-align: center;
-  margin-bottom: 5px;
+#submit {
+  border: 1px solid #5b5b5b;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: #666666;
+  color: #fff;
+  width: 110px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+#submit:hover {
+  color: #ccc;
 }
 .events-link {
   padding: 0px;
@@ -81,9 +92,10 @@ header.global-header {
 #shareBtn {
   position: absolute;
   top: 5px;
-  left: 200px;
+  right: 10px;
+  width: 120px;
   text-align: center;
-  padding: 7px;
+  padding: 5px;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
@@ -101,16 +113,13 @@ header.global-header {
 }
 #winBtn {
   position: absolute;
-  top: 45px;
-  left: 200px;
-  width: 96px;
-  padding: 7px;
+  top: 40px;
+  right: 10px;
+  width: 120px;
+  padding: 5px;
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
   color: #fff;
-  font: 10px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-  letter-spacing: 1px;
+  font: 10px/8px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   background-color: #848589;
   -webkit-box-shadow: 1px 1px 3px #86878b;
   -moz-box-shadow: 1px 1px 3px #86878b;
@@ -120,6 +129,12 @@ header.global-header {
 }
 #winBtn:hover {
   background-color: #75767a;
+}
+#winBtn .textnumber {
+  font-size: 7px;
+}
+#winBtn .notice {
+  font-size: 6px;
 }
 /* Twitter Section */
 .twitter-section {
@@ -140,30 +155,45 @@ header.global-header {
   float: left;
   height: 17px;
   width: 21px;
-  margin: 5px 5px 0 5px;
+  margin: 7px 5px 0 5px;
   background: url(../images/twitter_m.png) no-repeat;
 }
 .twitter-section header aside h2 {
   text-align: left;
   letter-spacing: 1px;
-  padding-top: 7px;
+  padding-top: 10px;
   width: 210px;
 }
 .twitter-section header aside.callout {
   float: right;
-  margin-top: 2px;
+  padding-top: 3px;
 }
 .twitter-section header aside.callout span {
-  background-color: #646465;
-  height: 100%;
+  font: 9px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   color: #fff;
-  padding: 10px 5px;
-  letter-spacing: normal;
-  font-size: 10px;
+  padding-right: 10px;
+  font-size: 9px;
   text-shadow: 0 0 0;
 }
+.twitter-section li {
+  overflow: hidden;
+  position: relative;
+  min-height: 50px;
+  padding: 5px 10px 10px 0;
+}
 .twitter-section li img {
-  padding: 10px 0 10px 10px;
+  position: absolute;
+  float: left;
+  overflow: hidden;
+  top: 10px;
+  left: 10px;
+}
+.twitter-section li .ui-li-desc {
+  padding-left: 70px;
+}
+.twitter-section li p.name {
+  font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #5C5C5C;
 }
 .twitter-section li a {
   color: #8ec754;
@@ -176,19 +206,11 @@ header.global-header {
   font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
   color: #848589;
 }
-.twitter-section li p.name {
-  margin-top: 4px;
-  font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-  color: #5C5C5C;
-}
 .twitter-section li:last-child {
   border-bottom: none;
 }
 .ui-icon {
   display: none;
-}
-.videolist li {
-  padding: 25px 0 0 10px;
 }
 .video-section {
   float: left;
@@ -211,6 +233,38 @@ header.global-header {
 .video-section header aside h2 {
   padding-top: 10px;
   text-align: left;
+}
+.video-section a {
+  color: #8ec754;
+  text-decoration: none;
+  font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+}
+.video-section a:hover {
+  color: #2B9646;
+}
+.video-section a li {
+  padding: 10px;
+  border: 1px solid #c6c7c8;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  background: linear-gradient(top, #ffffff 0%, #efefef 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#efefef');
+  position: relative;
+  min-height: 45px;
+}
+.video-section a li img {
+  position: absolute;
+  float: left;
+  overflow: hidden;
+  top: 10px;
+  left: 10px;
+}
+.video-section a li p {
+  padding-left: 80px;
 }
 /* Photo Section */
 .photo-section {
@@ -258,7 +312,10 @@ header.global-header {
   text-shadow: 0 0 0;
   padding: 11px 15px 8px 5px;
   display: block;
-  background-color: #646465;
+  -webkit-box-shadow: -1px 0px 0 #5c5d60, -2px 0px 0 #a9aaad;
+  -moz-box-shadow: -1px 0px 0 #5c5d60, -2px 0px 0 #a9aaad;
+  -o-box-shadow: -1px 0px 0 #5c5d60, -2px 0px 0 #a9aaad;
+  box-shadow: -1px 0px 0 #5c5d60, -2px 0px 0 #a9aaad;
 }
 .photo-section header aside.callout span a:hover {
   color: #bdd758;
@@ -291,6 +348,9 @@ header.global-header {
 .photo-section .nivo-directionNav a {
   top: 30%;
 }
+.windows {
+  margin-top: 0px !important;
+}
 .events-section {
   float: left;
   margin: 0;
@@ -320,6 +380,7 @@ header.global-header {
 }
 .events-section ul li {
   font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #666666;
   padding: 15px 15px 0 15px;
   text-align: left;
 }
@@ -330,8 +391,101 @@ header.global-header {
 .events-section .callout {
   padding: 15px;
 }
-.footer p.copyright {
-  font-size: 9px;
+/* Footer */
+footer {
+  margin-top: 15px;
+}
+footer p.footer {
+  font-size: 6px;
+  padding-left: 10px;
+  width: 180px;
+  color: #5c5c5c;
+}
+footer section {
+  float: left;
+}
+footer a {
+  color: #8ec754;
+}
+footer a:hover {
+  color: #2B9646;
+}
+.copyright-nav {
+  font-size: 7px;
   text-align: center;
-  padding: 3px 0;
+  padding: 5px 0;
+}
+.copyright-nav a {
+  color: #fff;
+  text-shadow: 0 0 0;
+}
+.copyright-win {
+  clear: both;
+  background: #000;
+  color: #fff;
+  font-size: 7px;
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
+.copyright-win a {
+  color: #fff;
+  text-shadow: 0 0 0;
+}
+#terms {
+  position: relative;
+  background: #fff;
+}
+#terms p {
+  font: 9px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+  padding: 10px 30px 10px 10px;
+}
+#terms a {
+  color: #8ec754;
+  text-decoration: none;
+  font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+}
+#terms a:hover {
+  color: #2B9646;
+}
+#terms .close {
+  display: block;
+  background-color: #cbcbcb;
+  color: red;
+  font: 14px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px 6px 9px 7px;
+}
+.simplemodal-overlay {
+  background-color: #000000;
+}
+.nav-windows {
+  border-top: 1px solid #8f8f8f;
+  margin-top: -4px;
+  width: 100%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  header.global-header {
+    background: url(../images/header.jpg) no-repeat;
+    background-size: 480px 125px;
+    height: 125px;
+  }
+  .twitter-section header aside span.icon {
+    background: url(../images/twitter.png) no-repeat;
+    background-size: 21px 17px;
+  }
+  .video-section header aside span.icon {
+    background: url(../images/video.png) no-repeat;
+    background-size: 22px 22px;
+  }
+  .photo-section header aside span.icon {
+    background: url(../images/camera.png) no-repeat;
+    background-size: 19px;
+  }
+  .events-section header aside span.icon {
+    background: url(../images/events.png) no-repeat;
+    background-size: 20px 20px;
+  }
 }
