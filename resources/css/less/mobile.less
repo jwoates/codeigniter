@@ -107,8 +107,9 @@ header.global-header {
   float: left;
   margin: 0;
   width: 100%;
+  text-shadow: 0 0 0;
   header {
-    height: 30px;
+    height: 45px;
     background-color: #848589;
     margin-top:-5px;
     aside {
@@ -118,7 +119,7 @@ header.global-header {
         float: left;
         height: 17px;
         width: 21px;
-        margin:7px 5px 0 5px;
+        margin:15px 5px 0 5px;
         background: url(../images/twitter_m.png) no-repeat;
       }
       h2 {
@@ -127,16 +128,15 @@ header.global-header {
         padding-top:10px;
         width: 210px;  
       }
-    }
-    aside.callout {
-      float: right;
-      padding-top: 3px;
       span {
-        font: 9px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+        font: 9px/7px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
         color: #fff;
-        padding-right: 10px;
-        font-size: 9px;
-        text-shadow: 0 0 0;
+        a {
+          text-decoration: none;
+          color: #fff;
+          text-shadow: 0 0 0;
+          &:hover { color: #d8d8d8; }
+        }
       }
     }
   }
@@ -146,7 +146,7 @@ header.global-header {
     position: relative;
     min-height: 50px;
     padding: 5px 10px 10px 0;
-    img {
+    img.avatar {
       position: absolute;
       float: left;
       overflow: hidden;

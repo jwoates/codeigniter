@@ -35,13 +35,13 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
   </header>
 
   <ul>
-    <li>The Fiction of Halo 4 – <span>Thursday, 7/12/12, 4:45pm - 5:45pm, Room 6BCF</span>
-    <li>Gears of War: Past, Present &amp; Future – <span>Friday, 7/13/12, 2:00p.m. - 3:00p.m., Room: 6BCF</span>
-    <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span>
+    <li>The Fiction of Halo 4 – <span>Thursday, 7/12/12, 4:45pm - 5:45pm, Room 6BCF</span></li>
+    <li>Gears of War: Past, Present &amp; Future – <span>Friday, 7/13/12, 2:00p.m. - 3:00p.m., Room: 6BCF</span></li>
+    <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
   </ul>
   <div class="callout">
-    <a href="#" target="_blank"><img src="/resources/images/major_nelson_m.jpg" alt="Major Nelson" /></a>
-    <a href="#" target="_blank"><img src="/resources/images/more_events_m.jpg" alt="More Events" /></a>
+    <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major_nelson_m.jpg" alt="Major Nelson" /></a>
+    <a href="http://www.thenerdmachine.com/nerd-hq/" target="_blank"><img src="/resources/images/more_events_m.jpg" alt="More Events" /></a>
   </div>
 
 </section>
@@ -63,7 +63,7 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
       <li><a href="/mobile/event" data-prefetch="true" class="ui-btn-active ui-state-persist">XBOX EVENTS</a></li>
     </ul>
   </div><!-- /navbar -->
-  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="#" data-role="none" class="privacy">Privacy &amp; Cookies</a>.</p>
+  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="http://privacy.microsoft.com/en-us/default.mspx" data-role="none" class="privacy" target="_blank">Privacy &amp; Cookies</a>.</p>
 </div><!-- /footer -->
 <?php
 }

@@ -63,11 +63,11 @@
         function linkify_twitter_status($status_text)
         {
           // linkify URLs
-          $status_text = preg_replace(
-            '/(https?:\/\/\S+)/',
-            '<a href="\1" target="_blank">\1</a>;',
-            $status_text
-          );
+          // $status_text = preg_replace(
+          //   '/(https?:\/\/\S+)/',
+          //   '<a href="\1" target="_blank">\1</a>;',
+          //   $status_text
+          // );
          
           // linkify twitter users
           $status_text = preg_replace(
@@ -98,9 +98,11 @@
     </header>
 
     <ul>
-      <li>The Fiction of Halo 4 – <span>Thursday, 7/12/12, 4:45pm - 5:45pm, Room 6BCF</span>
-      <li>Gears of War: Past, Present &amp; Future – <span>Friday, 7/13/12, 2:00p.m. - 3:00p.m., Room: 6BCF</span>
-      <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span>
+      <li>The Fiction of Halo 4 – <span>Thursday, 7/12/12, 4:45pm - 5:45pm, Room 6BCF</span></li>
+      <li>Gears of War: Past, Present &amp; Future – <span>Friday, 7/13/12, 2:00p.m. - 3:00p.m., Room: 6BCF</span></li>
+      <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
+      <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
+      <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
     </ul>
     <div class="callout">
       <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major-nelson.jpg" alt="Major Nelson" /></a>
