@@ -54,6 +54,8 @@ header.global-header {
   background:url(../images/age_gate_bg.jpg) no-repeat #8fc854;
   min-height: 350px;
   padding-top: 80px;
+  margin: 0 auto;
+  text-align: center;
   h2 {
     margin-bottom:15px;
   }
@@ -68,29 +70,24 @@ header.global-header {
   }
   select {
     border: 0;
-    color: #848589;
     background-color: #fff;
-    font-family: 'SegoeBold';
+    font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; 
+    color: #848589;
     -webkit-appearance: none;
     -webkit-border-radius: 0px;
     appearance: none;
-    font-size: 14px;
-    height: 45px;
-    line-height: 45px;
-    width: 115px;
     cursor: pointer;
     outline: none;
+    margin-right: 10px;
+    padding:10px 30px 10px 30px;
   }
 
   #submit {
-    display: block;
-    position: relative;
-    top: 35px;
-    left: 220px;
     border: 1px solid #5b5b5b;
     background-color: #666666;
     color: #fff;
     width: 110px;
+    margin-top: 10px;
 
     &:hover {
       color: #ccc;
@@ -317,6 +314,12 @@ footer {
   p.footer {
     font-size: 12px;
     width: 450px;
+    a {
+    color: #8ec754;
+    text-decoration: none;
+    font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; 
+    &:hover { color: #2B9646;}
+  }
   }
 }
 

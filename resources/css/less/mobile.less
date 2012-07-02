@@ -16,21 +16,30 @@ header.global-header {
   background: url(../images/header_m.jpg) no-repeat;
   height: 125px;
 }
+
+
 .gate-keeper {
   .gradient (#bdd758, #8fc854);
-  min-height: 480px;
   text-align: center;
+  padding-bottom: 50px;
   margin-top:-4px;
   .age-gate { width:250px; margin:0 auto; padding-top:40px; }
-  h2 {
-    margin-bottom:15px;
-  }
-  input {
-    text-align: center;
-    margin-bottom: 5px;
+  h2 { margin-bottom:15px; }
+}
+#submit {
+  border: 1px solid #5b5b5b;
+  .border-radius(0);
+  -webkit-appearance: none;
+  background-color: #666666;
+  color: #fff;
+  width: 110px;
+  padding:10px 0;
+  margin-top: 10px;
+
+  &:hover {
+    color: #ccc;
   }
 }
-
 .events-link {
   padding: 0px;
   margin: 0px;
@@ -50,9 +59,10 @@ header.global-header {
 #shareBtn {
   position: absolute;
   top: 5px;
-  left: 200px;
+  right: 10px;
+  width: 120px;
   text-align: center;
-  padding: 7px;
+  padding: 5px;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
@@ -70,16 +80,13 @@ header.global-header {
 }
 #winBtn {
   position: absolute;
-  top: 45px;
-  left: 200px;
-  width: 96px;
-  padding: 7px;
+  top: 40px;
+  right: 10px;
+  width: 120px;
+  padding: 5px;
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
   color: #fff;
-  font: 10px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-  letter-spacing: 1px;
+  font: 10px/8px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   background-color: #848589;
   -webkit-box-shadow: 1px 1px 3px #86878b;
   -moz-box-shadow: 1px 1px 3px #86878b;
@@ -89,6 +96,8 @@ header.global-header {
   &:hover {
     background-color: #75767a;
   }
+  .textnumber { font-size: 7px; }
+  .notice { font-size: 6px; }
 }
 
 
@@ -109,37 +118,49 @@ header.global-header {
         float: left;
         height: 17px;
         width: 21px;
-        margin:5px 5px 0 5px;
+        margin:7px 5px 0 5px;
         background: url(../images/twitter_m.png) no-repeat;
       }
       h2 {
         text-align: left;
         letter-spacing: 1px;
-        padding-top:7px;
+        padding-top:10px;
         width: 210px;  
       }
     }
     aside.callout {
       float: right;
-      margin-top: 2px;
+      padding-top: 3px;
       span {
-        background-color: #646465;
-        height: 100%;
+        font: 9px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
         color: #fff;
-        padding: 10px 5px;
-        letter-spacing: normal;
-        font-size: 10px;
+        padding-right: 10px;
+        font-size: 9px;
         text-shadow: 0 0 0;
       }
     }
   }
-  
-  
   // Tweets
   li {
+    overflow: hidden;
+    position: relative;
+    min-height: 50px;
+    padding: 5px 10px 10px 0;
     img {
-      padding:10px 0 10px 10px;
+      position: absolute;
+      float: left;
+      overflow: hidden;
+      top: 10px;
+      left: 10px;
     }
+    .ui-li-desc {
+      padding-left: 70px;
+    }
+    p.name {
+      font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      color: #5C5C5C; 
+    }
+    
       a {
         color: #8ec754;
         text-decoration: none;
@@ -148,11 +169,7 @@ header.global-header {
           font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;
         }
     }
-    p.name {
-      margin-top:4px;
-      font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-      color: #5C5C5C; 
-    }
+    
     &:last-child { border-bottom: none; }
   }
     
@@ -164,9 +181,6 @@ header.global-header {
   display: none;
 }
 
-.videolist {
-  li { padding: 25px 0 0 10px; }
-}
 
 .video-section {
   float: left;
@@ -190,7 +204,31 @@ header.global-header {
         text-align: left;
       }
     } 
-  }  
+  }
+  a {
+    color: #8ec754;
+    text-decoration: none;
+    font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; 
+    &:hover { color: #2B9646;}
+    li {
+      padding: 10px;
+      border: 1px solid #c6c7c8;
+      .gradient (#fff, #efefef);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#efefef');
+      position: relative;
+      min-height: 45px;
+      
+
+      img {
+        position: absolute;
+        float: left;
+        overflow: hidden;
+        top: 10px;
+        left: 10px;
+      }
+      p { padding-left: 80px;}
+    }
+  } 
 }
 
 
@@ -206,6 +244,7 @@ header.global-header {
     height: 30px;
     background-color: #848589;
     margin-top:-4px;
+
     aside {
       float: left;
       span.icon {
@@ -236,7 +275,8 @@ header.global-header {
           text-shadow: 0 0 0;
           padding: 11px 15px 8px 5px;
           display: block;
-          background-color: #646465;
+          // border-left: 1px solid #5c5d60;
+          .box-shadow (-1px 0px 0 #5c5d60, -2px 0px 0 #a9aaad);
           &:hover { color: #bdd758; }
           &:active { color: #bdd758; }
         }
@@ -272,7 +312,7 @@ header.global-header {
   }
 }
 
-
+.windows { margin-top: 0px !important; }
 // Events Section
 .events-section {
   float: left;
@@ -300,6 +340,7 @@ header.global-header {
   ul { margin:0; padding:0; list-style:none; 
     li { 
       font: 13px/19px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      color: #666666;
       padding: 15px 15px 0 15px;
       text-align: left;
       span { font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;}
@@ -310,12 +351,106 @@ header.global-header {
 
 
 
-// Footer 
-.footer {
+/* Footer */
+footer {
+  margin-top: 15px;
+  p.footer {
+    font-size: 6px;
+    padding-left: 10px;
+    width: 180px;
+    color: #5c5c5c;
+  }
+  section { float: left; }
+  a {
+    color: #8ec754;
+    &:hover { color: #2B9646;}
+  }
+}
+.copyright-nav {
+  font-size: 7px;
+  text-align: center;
+  padding: 5px 0;
+  a {
+    color: #fff;
+    text-shadow: 0 0 0;
+  }
+}
+.copyright-win {
+  clear: both;
+  background: #000;
+  color: #fff;
+  font-size: 7px;
+  text-align: center;
+  padding: 15px 0 15px 0;
+  a {
+    color: #fff;
+    text-shadow: 0 0 0;
+  }
+}
 
-  p.copyright {
-    font-size: 9px;
-    text-align: center;
-    padding:3px 0;
+// Legal
+#terms {
+  position: relative;
+  background: #fff;
+  p {
+    font: 9px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; 
+    color: #848589;
+    padding: 10px 30px 10px 10px;
+  }
+  a {
+    color: #8ec754;
+    text-decoration: none;
+    font: 12px/12px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; 
+    &:hover { color: #2B9646;}
+  }
+  .close {
+    display: block;
+    background-color: #cbcbcb;
+    color: red;
+    font: 14px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; 
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px 6px 9px 7px;
+  }
+}
+.simplemodal-overlay {
+  #translucent > .background(#000, 50);
+}
+
+// Windows Phone Navigation
+.nav-windows {
+  border-top: 1px solid #8f8f8f;
+  margin-top: -4px;
+  width: 100%;
+  
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  header.global-header {
+    background: url(../images/header.jpg) no-repeat;
+    background-size: 480px 125px;
+    height: 125px;
+  }
+
+  .twitter-section header aside span.icon {
+    background: url(../images/twitter.png) no-repeat;
+    background-size: 21px 17px;
+  }
+
+  .video-section header aside span.icon {
+    background: url(../images/video.png) no-repeat;
+    background-size: 22px 22px;
+  }
+
+  .photo-section header aside span.icon {
+    background: url(../images/camera.png) no-repeat;
+    background-size: 19px;
+  }
+
+  .events-section header aside span.icon {
+    background: url(../images/events.png) no-repeat;
+    background-size: 20px 20px;
   }
 }
