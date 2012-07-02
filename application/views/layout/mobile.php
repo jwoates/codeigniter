@@ -70,6 +70,7 @@ IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DAMAGES WHATEVER ASSOCIATED WITH U
       $('#shareBtn').click(function(){
         FB.ui({
           method: 'feed', //the location we are posting to, in this case the users feed
+          display: 'iframe',
           name: 'Xbox @ San Diego Comic-Con',
           link: '<?php echo $this->config->item('facebook_app_url')?>',
           picture: 'https://sdcc.azurewebsites.net/resources/images/sdcc-logo.gif',
