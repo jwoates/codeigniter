@@ -31,7 +31,7 @@
   <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
   <script>
     FB.init({
-      appId: '291750807589264', // tell the facebook javascript SDK who's using it
+      appId: '<?php echo $this->config->item('appId')?>', // tell the facebook javascript SDK who's using it
       xfbml: true, //this line is necessary for rendering facebook social plugins
       status     : true,
       cookie     : true,
