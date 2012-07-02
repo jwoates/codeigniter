@@ -505,10 +505,18 @@ header.global-header {
 }
 .twitter-section h2 {
   letter-spacing: 3px;
+  line-height: 15px;
 }
 .twitter-section h2 span {
   letter-spacing: normal;
   font-size: 11px;
+}
+.twitter-section h2 span a {
+  text-decoration: none;
+  color: #fff;
+}
+.twitter-section h2 span a:hover {
+  color: #2B9646;
 }
 .twitter-section .tweet {
   display: block;

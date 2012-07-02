@@ -36,7 +36,7 @@
   <section class="twitter-section">
     <header>
       <span class="icon"></span>
-      <h2>COMIC-CON TWITTER FEED &nbsp;&nbsp;&nbsp;<span><a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank">#XboxSDCC m#NerdHQ</a> <a href="https://twitter.com/#!/thenerdmachine/" target="_blank">@thenerdmachine</a></span></h2>
+      <h2>COMIC-CON TWITTER FEED <br /><span><a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank">#XboxSDCC</a> <a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank">#NerdHQ</a> <a href="https://twitter.com/#!/thenerdmachine/" target="_blank">@thenerdmachine</a></span></h2>
     </header>
 
     <div id="twitterList">
@@ -103,8 +103,8 @@
       <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span>
     </ul>
     <div class="callout">
-      <img src="/resources/images/major-nelson.jpg" alt="Major Nelson" />
-      <img src="/resources/images/more-events.jpg" alt="More Events" />
+      <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major-nelson.jpg" alt="Major Nelson" /></a>
+      <a href="http://www.thenerdmachine.com/nerd-hq/" target="_blank"><img src="/resources/images/more-events.jpg" alt="More Events" /></a>
     </div>
 
   </section>
