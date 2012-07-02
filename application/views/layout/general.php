@@ -40,7 +40,7 @@
 <footer>
   <div class="container">
     <section class="columns four" style="margin-left:0px !important;">
-      <p class="footer">The content contained in this app is ©2012 Microsoft Corporation. All rights reserved. You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app. See <a href="http://www.xbox.com/en-US/Legal/livetou" target="_blank">Terms of Use</a> and <a href="#">Privacy &amp; Cookies</a>.</p>
+      <p class="footer">The content contained in this app is ©2012 Microsoft Corporation. All rights reserved. You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app. See <a href="http://www.xbox.com/en-US/Legal/livetou" target="_blank">Terms of Use</a> and <a target="_blank" href="http://privacy.microsoft.com/en-us/default.mspx">Privacy &amp; Cookies</a>.</p>
     </section>
     <section class="columns two">
       <img src="/resources/images/xbox_logo.png" alt="XBOX" style="margin-left:80px;" />
