@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>SDCC App</title>
-  <meta property="og:title" content="San Diego Comicon Hub"/>
+  <meta property="og:title" content="Xbox @ San Diego Comic-Con"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://apps.facebook.com/elc_ent_expo/us"/>
-  <meta property="og:image" content="https://c193490.ssl.cf1.rackcdn.com/E3-2012/share-image.png"/>
-  <meta property="og:description" content="bla bla" />
+  <meta property="og:url" content="<?php echo $this->config->item('facebook_app_url')?>"/>
+  <meta property="og:image" content="https://sdcc.azurewebsites.net/resources/images/sdcc-logo.gif"/>
+  <meta property="og:description" content="Your exclusive pass to San Diego Comic-Con. Stay in the know with videos, photos, live tweets and event access all from Xbox." />
 
   <link href="https://font-box.heroku.com/segoe.css" rel="stylesheet" type="text/css" media="screen" />
    <link href="/resources/css/jquery.jscrollpane.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
@@ -58,10 +58,9 @@
         $('#shareBtn').click(function(){
           FB.ui({
             method: 'feed', //the location we are posting to, in this case the users feed
-            name: 'Xbox @ San Diego Comic-Con ',
-            link: 'http://apps.facebook.com/rh-jackson/',
-            picture: 'http://roundhouseagency.com/img/rh-logo.jpg',
-            caption: 'caption',
+            name: 'Xbox @ San Diego Comic-Con',
+            link: '<?php echo $this->config->item('facebook_app_url')?>',
+            picture: 'https://sdcc.azurewebsites.net/resources/images/sdcc-logo.gif',
             description: 'Your exclusive pass to San Diego Comic-Con. Stay in the know with videos, photos, live tweets and event access all from Xbox.'
           },
           function(response) { //the callback

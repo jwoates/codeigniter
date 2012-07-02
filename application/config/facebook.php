@@ -21,7 +21,7 @@ else
 {
   $config['appId']                = '329330017143635';
   $config['secret']               = '4a3cae68535777a6793df72ab18c7904';
-  $config['facebook_app_url']     = 'http://apps.facebook.com/xbox-sdcc/';
+  $config['facebook_app_url']     = 'https://apps.facebook.com/xbox-sdcc/';
   
 }
 
