@@ -173,7 +173,6 @@ header.global-header {
   float: left;
   border: 1px solid #e4e4e4;
   margin: 20px 10px 0 0;
-  padding-bottom: 10px;
   width: 545px;
   header {
     background-color: #8ec754;
@@ -189,9 +188,16 @@ header.global-header {
   }
   h2 { 
     letter-spacing: 3px;
+    line-height: 15px;
     span {
       letter-spacing: normal;
-      font-size: 13px;
+      font-size: 11px;
+      a {
+
+        text-decoration: none;
+        color: #fff;
+        &:hover { color: #2B9646; }
+      }
     }
   }
   .tweet {
