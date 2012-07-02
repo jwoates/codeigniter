@@ -141,9 +141,10 @@ header.global-header {
   float: left;
   margin: 0;
   width: 100%;
+  text-shadow: 0 0 0;
 }
 .twitter-section header {
-  height: 30px;
+  height: 45px;
   background-color: #848589;
   margin-top: -5px;
 }
@@ -155,7 +156,7 @@ header.global-header {
   float: left;
   height: 17px;
   width: 21px;
-  margin: 7px 5px 0 5px;
+  margin: 15px 5px 0 5px;
   background: url(../images/twitter_m.png) no-repeat;
 }
 .twitter-section header aside h2 {
@@ -164,16 +165,17 @@ header.global-header {
   padding-top: 10px;
   width: 210px;
 }
-.twitter-section header aside.callout {
-  float: right;
-  padding-top: 3px;
-}
-.twitter-section header aside.callout span {
-  font: 9px/9px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+.twitter-section header aside span {
+  font: 9px/7px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   color: #fff;
-  padding-right: 10px;
-  font-size: 9px;
+}
+.twitter-section header aside span a {
+  text-decoration: none;
+  color: #fff;
   text-shadow: 0 0 0;
+}
+.twitter-section header aside span a:hover {
+  color: #d8d8d8;
 }
 .twitter-section li {
   overflow: hidden;
@@ -181,7 +183,7 @@ header.global-header {
   min-height: 50px;
   padding: 5px 10px 10px 0;
 }
-.twitter-section li img {
+.twitter-section li img.avatar {
   position: absolute;
   float: left;
   overflow: hidden;

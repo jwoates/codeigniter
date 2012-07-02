@@ -33,9 +33,7 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
     <aside>
       <span class="icon"></span>
       <h2>COMIC-CON TWITTER FEED</h2>
-    </aside>
-    <aside class="callout">
-      <span>#xboxsdcc  #hashtag2</span>
+      <span><a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank" data-role="none">#XboxSDCC</a> <a href="https://twitter.com/#!/search/%23XboxSDCC%20OR%20%23NerdHQ" target="_blank" data-role="none">#NerdHQ</a> <a href="https://twitter.com/#!/thenerdmachine/" target="_blank" data-role="none">@thenerdmachine</a></span>
    </aside>
   </header>
 
@@ -54,7 +52,7 @@ foreach ($twitter_approved_feed->entry as $entry) {
   $name = preg_replace('/\(.*?\)/', '', $entry->author->name);
 
   echo '<li><img alt="' 
-          . $entry->author->name . '" src="' . $entry->link[1]['href'] . '" /><p class="name">' . $name . '</p><p>' . linkify_twitter_status($str) . '</p>
+          . $entry->author->name . '" src="' . $entry->link[1]['href'] . '" class="avatar" width="48" height="48" /><p class="name">' . $name . '</p><p>' . linkify_twitter_status($str) . '</p>
         </li>';
 }
 $i++;
@@ -63,11 +61,11 @@ $i++;
 function linkify_twitter_status($status_text)
 {
   // linkify URLs
-  $status_text = preg_replace(
-    '/(https?:\/\/\S+)/',
-    '<a href="\1" target="_blank">\1</a>;',
-    $status_text
-  );
+  // $status_text = preg_replace(
+  //   '/(https?:\/\/\S+)/',
+  //   '<a href="\1" target="_blank">\1</a>;',
+  //   $status_text
+  // );
  
   // linkify twitter users
   $status_text = preg_replace(
@@ -107,7 +105,7 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
       <li><a href="/mobile/event" data-prefetch="true">XBOX EVENTS</a></li>
     </ul>
   </div><!-- /navbar -->
-  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="#" data-role="none" class="privacy">Privacy &amp; Cookies</a>.</p>
+  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="http://privacy.microsoft.com/en-us/default.mspx" data-role="none" class="privacy" target="_blank">Privacy &amp; Cookies</a>.</p>
 </div><!-- /footer -->
 <?php
 }

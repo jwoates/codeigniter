@@ -346,17 +346,17 @@
 	color: 	#333333 /*{c-body-color}*/;
 }
 .ui-body-c .ui-link {
-	color: #2489CE /*{c-body-link-color}*/;
-	font-weight: bold;
+	color: #8EC754 /*{c-body-link-color}*/;
+	
 }
 .ui-body-c .ui-link:hover {
 	color: #2489CE /*{c-body-link-hover}*/;
 }
 .ui-body-c .ui-link:active {
-	color: #2489CE /*{c-body-link-active}*/;
+	color: #8EC754 /*{c-body-link-active}*/;
 }
 .ui-body-c .ui-link:visited {
-    color: #2489CE /*{c-body-link-visited}*/;
+    color: #8EC754 /*{c-body-link-visited}*/;
 }
 .ui-btn-up-c {
 	border: 1px solid 		#ccc /*{c-bup-border}*/;
