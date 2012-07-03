@@ -651,6 +651,13 @@ header.global-header {
   text-align: center;
   color: #666666;
 }
+.legal-text {
+  clear: both;
+  margin-top: 20px;
+}
+.legal-text p {
+  font-size: 10px;
+}
 /* Footer */
 footer {
   margin-top: 15px;

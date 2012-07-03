@@ -1,0 +1,1 @@
+$(function(){$(".close").click(function(){$("#terms").hide()});$(".terms").click(function(){$("#terms").modal({overlayClose:!0,opacity:80,overlayCss:{backgroundColor:"#000"}})})});

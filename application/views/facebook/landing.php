@@ -107,7 +107,7 @@
     </ul>
     <div class="callout">
       <h3>VISIT MAJOR NELSON + NERD HQ FOR MORE EVENT DETAILS</h3>
-      <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major-nelson.jpg" alt="Major Nelson" /></a>
+      <a href="http://majornelson.com/2012/06/28/xbox-360-comic-con-2012-schedule/" target="_blank"><img src="/resources/images/major-nelson.jpg" alt="Major Nelson" /></a>
       <a href="http://www.thenerdmachine.com/nerd-hq/" target="_blank"><img src="/resources/images/more-events.jpg" alt="More Events" /></a>
     </div>
 

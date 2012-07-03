@@ -31,7 +31,7 @@ $(function(){
     e.preventDefault();
     click = $(this);
     data = click.data('yt-id');
-    log(data);
+    // log(data);
     $('#video-wrap').html('<iframe frameborder="0" allowfullscreen="" id="yt-video-player" class="yt" title="YouTube video player" height="308" width="533" src="https://www.youtube.com/embed/'+ data +'?wmode=transparent&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fe3-2012.herokuapp.com"></iframe>');
 
     $('#videolist a').removeClass('active');
@@ -40,8 +40,19 @@ $(function(){
   });
   
 
- 
 
+    $('.terms-main').click(function(e){
+        // var $target = $('html,body'); 
+        e.preventDefault();
+        $('.legal-text').toggle('slow');
+        FB.Canvas.setAutoResize();
+        
+
+        // $target.animate({scrollTop: $target.height()}, 1000, function(){
+        //     FB.Canvas.setAutoResize();
+        // });
+         
+    });
 
 });
 
