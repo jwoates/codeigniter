@@ -40,6 +40,7 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
     <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
   </ul>
   <div class="callout">
+    <h3>VISIT MAJOR NELSON + NERD HQ FOR MORE EVENT DETAILS</h3>
     <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major_nelson_m.jpg" alt="Major Nelson" /></a>
     <a href="http://www.thenerdmachine.com/nerd-hq/" target="_blank"><img src="/resources/images/more_events_m.jpg" alt="More Events" /></a>
   </div>

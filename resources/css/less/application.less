@@ -19,7 +19,7 @@ body, p, h1, h2, h3, h4 { margin:0; padding:0; }
 p { }
 h1 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
 h2 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
-h3 { font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h3 { font: 12px/12px 'Rockwell', Arial, "MS Trebuchet", sans-serif; color:#848589; font-weight: bold; }
 h4 { }
 
 /* Layout */
@@ -243,8 +243,10 @@ header.global-header {
     margin: 1px 15px 0px 0px;
     background: url(../images/sprite.png) no-repeat -73px 1px;
   }
+  h2 { letter-spacing: 3px; }
   h3 { 
-    letter-spacing: 3px;
+    text-align: center;
+    padding-bottom: 10px;
   }
   ul { margin:0; padding:0; list-style:none; 
     li { 
@@ -253,7 +255,7 @@ header.global-header {
       span { font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;}
     }
   }
-  .callout { padding: 15px;}
+  .callout { padding: 15px; }
 }
 
 
@@ -311,7 +313,12 @@ header.global-header {
   &:hover { .opacity (100);}
 }
 
-
+.comingsoon {
+  h2 {
+    text-align: center;
+    color: #666666;
+  }
+}
 
 /* Footer */
 footer {

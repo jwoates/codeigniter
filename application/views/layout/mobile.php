@@ -43,8 +43,17 @@
 <div data-role="page" class="type-interior">
  <div id="terms" style="display:none;">
   <div class="close simplemodal-close">x</div>
-  <p>Microsoft grants you a limited license to use the content in this application solely for your personal, non-commercial use. Use of this application is subject to the Xbox LIVE Terms of Use, available at: <a href="http://www.xbox.com/en-US/Legal/livetou" target="_blank" data-role="none">http://www.xbox.com/en-US/Legal/livetou</a>
-IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DAMAGES WHATEVER ASSOCIATED WITH USE OF THE APPLICATION, INCLUDING WITHOUT LIMITATION ANY DAMAGE TO OR DISRUPTION OF COMPUTER OR SOFTWARE PROGRAMS, OR ANY LOSS OF USER’S DATA. IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, PROVISION OF OR FAILURE TO PROVIDE PROGRAM SERVICES, OR INFORMATION AVAILABLE FROM THE PROGRAM.</p>
+  <p>This app is © 2012 Microsoft Corporation. All rights reserved. 
+
+BY DOWNLOADING OR USING THE APP, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT DOWNLOAD OR USE THE APP.
+
+Microsoft grants you a limited, nontransferable license to use this app and the content provided in this app solely for your personal, non-commercial use, and solely for the purposes stated within this app.
+
+You may not use the app in any manner that violates others' privacy, publicity, or other intellectual property rights, or that is fraudulent or unlawful.
+
+You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app.
+
+THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DAMAGES WHATSOEVER ASSOCIATED WITH USE OF THE APP, INCLUDING ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, OR INFORMATION AVAILABLE FROM THE APP.</p>
 </div>
   <?php
     echo $yield;

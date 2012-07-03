@@ -7,7 +7,7 @@ body, p, h1, h2, h3, h4, header, aside, ul, li { margin:0; padding:0;  }
 p { }
 h1 { font: 17px/17px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
 h2 { font: 10px/11px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
-h3 { font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; text-shadow: 0 0 0; }
+h3 { font: 9px/12px 'Rockwell', Arial, "MS Trebuchet", sans-serif; color:#848589; font-weight: bold; text-shadow: 0 0 0; }
 h4 { }
 
 // Layout
@@ -82,11 +82,11 @@ header.global-header {
   position: absolute;
   top: 40px;
   right: 10px;
-  width: 120px;
-  padding: 5px;
+  width: 130px;
+  padding: 5px 0 5px 0;
   text-align: center;
   color: #fff;
-  font: 10px/8px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  font: 10px/10px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   background-color: #848589;
   -webkit-box-shadow: 1px 1px 3px #86878b;
   -moz-box-shadow: 1px 1px 3px #86878b;
@@ -96,8 +96,8 @@ header.global-header {
   &:hover {
     background-color: #75767a;
   }
-  .textnumber { font-size: 7px; }
-  .notice { font-size: 6px; }
+  .textnumber { font-size: 10px; text-transform: uppercase; }
+  .notice { font-size: 9px; }
 }
 
 
@@ -335,6 +335,7 @@ header.global-header {
         padding-top: 10px;
         text-align: left;
       }
+      
     } 
   } 
   ul { margin:0; padding:0; list-style:none; 
@@ -346,7 +347,11 @@ header.global-header {
       span { font: 13px/13px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;}
     }
   }
-  .callout { padding: 15px;} 
+  .callout { padding: 15px; } 
+  h3 { 
+        text-align: center;
+        padding-bottom: 10px;
+      }
 }
 
 
@@ -426,6 +431,12 @@ footer {
   
 }
 
+.comingsoon {
+  h2 {
+    text-align: center;
+    color: #666666;
+  }
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   header.global-header {
@@ -453,4 +464,5 @@ footer {
     background: url(../images/events.png) no-repeat;
     background-size: 20px 20px;
   }
+
 }

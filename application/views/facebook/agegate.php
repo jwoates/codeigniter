@@ -38,9 +38,9 @@
         'value' => 'ENTER',
         'data-role' => 'none'
       );
-
-      echo form_dropdown('day', $day);
+      
       echo form_dropdown('month', $month);
+      echo form_dropdown('day', $day);
       echo form_dropdown('year', $year);
       
     ?>

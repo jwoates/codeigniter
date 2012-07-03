@@ -54,7 +54,7 @@
 
           echo '<div class="tweet">
                   <img alt="' 
-                  . $entry->author->name . '" src="' . $entry->link[1]['href'] . '" /><p class="name">' . $name . '</p><p>' . linkify_twitter_status($str) . '</p><div class="clear"></div>
+                  . $entry->author->name . '" src="' . $entry->link[1]['href'] . '" width="48" height="48" /><p class="name">' . $name . '</p><p>' . linkify_twitter_status($str) . '</p><div class="clear"></div>
                 </div>';
         }
 
@@ -107,6 +107,7 @@
       <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
     </ul>
     <div class="callout">
+      <h3>VISIT MAJOR NELSON + NERD HQ FOR MORE EVENT DETAILS</h3>
       <a href="http://majornelson.com/" target="_blank"><img src="/resources/images/major-nelson.jpg" alt="Major Nelson" /></a>
       <a href="http://www.thenerdmachine.com/nerd-hq/" target="_blank"><img src="/resources/images/more-events.jpg" alt="More Events" /></a>
     </div>
@@ -119,13 +120,15 @@
     <header>
       <span class="icon"></span>
       <h2>COMIC-CON PHOTO GALLERY</h2>
-      <a href="http://www.facebook.com/media/set/?set=a.10150575545216023.434660.16547831022&type=3" target="_blank">VIEW full gallery <span></span></a>
-      <div class="clear"></div>
+<!--       <a href="http://www.facebook.com/media/set/?set=a.10150575545216023.434660.16547831022&type=3" target="_blank">VIEW full gallery <span></span></a>
+ -->      <div class="clear"></div>
     </header>
 
   
   <div class="slider-wrapper theme-default">
-   <div id="slider" class="nivoSlider">
+      <div class="comingsoon"><h2>Photos coming soon!<br />Check back here for SDCC 2012 as they become available.</h2></div>
+
+   <!-- <div id="slider" class="nivoSlider">
     <?php
       $photos =  $fb_photos;
       foreach ($photos->data as $key=>$value) {
@@ -133,7 +136,7 @@
         echo '<img src="' . $value->source . '" />';
       }
     ?>
-    </div>
+    </div> -->
   </div>
 
   </section>

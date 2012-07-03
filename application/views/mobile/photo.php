@@ -35,21 +35,22 @@ if (($this->agent->platform() == 'Windows OS') || ($this->agent->browser() == 'I
       <h2>COMIC-CON PHOTO GALLERY</h2>
     </aside>
     
-    <aside class="callout">
+<!--     <aside class="callout">
       <span><a href="http://www.facebook.com/media/set/?set=a.10150575545216023.434660.16547831022&type=3" target="_blank">VIEW FULL GALLERY</a><div class="arrow-up"></div></span>
-   </aside>
+   </aside> -->
 
   </header>
 
 <div class="slider-wrapper theme-default">
- <div id="slider" class="nivoSlider">
+  <div class="comingsoon"><h2>Photos coming soon!<br />Check back here for SDCC 2012 as they become available.</h2></div>
+<!--  <div id="slider" class="nivoSlider">
   <?php
     $photos =  $fb_photos;
     foreach ($photos->data as $key=>$value) {
       echo '<img src="' . $value->source . '" />';
     }
   ?>
-  </div>
+  </div> -->
 </div>
 
 </section>

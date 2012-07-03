@@ -342,8 +342,9 @@ h2 {
   color: #fff;
 }
 h3 {
-  font: 18px/18px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
-  color: #fff;
+  font: 12px/12px 'Rockwell', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+  font-weight: bold;
 }
 /* Layout */
 header.global-header {
@@ -564,8 +565,12 @@ header.global-header {
   margin: 1px 15px 0px 0px;
   background: url(../images/sprite.png) no-repeat -73px 1px;
 }
-.xbox-events-section h3 {
+.xbox-events-section h2 {
   letter-spacing: 3px;
+}
+.xbox-events-section h3 {
+  text-align: center;
+  padding-bottom: 10px;
 }
 .xbox-events-section ul {
   margin: 0;
@@ -641,6 +646,10 @@ header.global-header {
 .theme-default .nivo-directionNav a:hover {
   opacity: 1;
   filter: alpha(opacity= 100 );
+}
+.comingsoon h2 {
+  text-align: center;
+  color: #666666;
 }
 /* Footer */
 footer {
