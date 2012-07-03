@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SDCC App</title>
 
-  <meta property="og:title" content="San Diego Comicon Hub"/>
+  <meta property="og:title" content="Xbox @ San Diego Comic-Con"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://apps.facebook.com/elc_ent_expo/us"/>
-  <meta property="og:image" content="https://c193490.ssl.cf1.rackcdn.com/E3-2012/share-image.png"/>
-  <meta property="og:description" content="bla bla" />
+  <meta property="og:url" content="<?php echo $this->config->item('facebook_app_url')?>"/>
+  <meta property="og:image" content="https://sdcc.azurewebsites.net/resources/images/sdcc-logo.gif"/>
+  <meta property="og:description" content="Your exclusive pass to San Diego Comic-Con. Stay in the know with videos, photos, live tweets and event access all from Xbox." />
   
   <meta name="MobileOptimzied" content="width" />
   <meta http-equiv="cleartype" content="on" />
@@ -31,7 +31,7 @@
   <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
   <script>
     FB.init({
-      appId: '291750807589264', // tell the facebook javascript SDK who's using it
+      appId: '<?php echo $this->config->item('appId')?>', // tell the facebook javascript SDK who's using it
       xfbml: true, //this line is necessary for rendering facebook social plugins
       status     : true,
       cookie     : true,
@@ -79,10 +79,10 @@ THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DA
       $('#shareBtn').click(function(){
         FB.ui({
           method: 'feed', //the location we are posting to, in this case the users feed
-          name: 'Xbox @ San Diego Comic-Con ',
-          link: 'http://apps.facebook.com/rh-jackson/',
-          picture: 'http://roundhouseagency.com/img/rh-logo.jpg',
-          caption: 'caption',
+          display: 'iframe',
+          name: 'Xbox @ San Diego Comic-Con',
+          link: '<?php echo $this->config->item('facebook_app_url')?>',
+          picture: 'https://sdcc.azurewebsites.net/resources/images/sdcc-logo.gif',
           description: 'Your exclusive pass to San Diego Comic-Con. Stay in the know with videos, photos, live tweets and event access all from Xbox.'
         },
         function(response) { //the callback

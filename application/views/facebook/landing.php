@@ -104,7 +104,6 @@
       <li>Gears of War: Past, Present &amp; Future – <span>Friday, 7/13/12, 2:00p.m. - 3:00p.m., Room: 6BCF</span></li>
       <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
       <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
-      <li>Halo 4: A New Campaign and Halo Infinity Multiplayer – <span>Saturday, 7/14/12, 3:15pm - 4:15pm, Room 6DE</span></li>
     </ul>
     <div class="callout">
       <h3>VISIT MAJOR NELSON + NERD HQ FOR MORE EVENT DETAILS</h3>
