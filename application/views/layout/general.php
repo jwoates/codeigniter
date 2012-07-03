@@ -30,26 +30,29 @@
     }); 
   </script>
 
+<div id="wrapper">
+  <div id="container" class="container">
 
-<div id="container" class="container">
+    <?php
+      echo $yield;
+    ?> 
 
-<?php
-  echo $yield;
-?> 
+    <footer>
+      <div class="container">
+        <section class="columns four" style="margin-left:0px !important;">
+          <p class="footer">The content contained in this app is ©2012 Microsoft Corporation. All rights reserved. You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app. See <a href="#" class="terms-main">Terms of Use</a> and <a target="_blank" href="http://privacy.microsoft.com/en-us/default.mspx">Privacy &amp; Cookies</a>.</p>
+        </section>
+        <section class="columns two">
+          <img src="/resources/images/xbox_logo.png" alt="XBOX" style="margin-left:80px;" />
+        </section>
+      </div>
+    </footer>
 
-<footer>
-  <div class="container">
-    <section class="columns four" style="margin-left:0px !important;">
-      <p class="footer">The content contained in this app is ©2012 Microsoft Corporation. All rights reserved. You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app. See <a href="#" class="terms-main">Terms of Use</a> and <a target="_blank" href="http://privacy.microsoft.com/en-us/default.mspx">Privacy &amp; Cookies</a>.</p>
-    </section>
-    <section class="columns two">
-      <img src="/resources/images/xbox_logo.png" alt="XBOX" style="margin-left:80px;" />
-    </section>
+    <div class="legal-text" style="display:none;">
+      <p>This app is © 2012 Microsoft Corporation.  All rights reserved. <br><br>BY DOWNLOADING OR USING THE APP, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT DOWNLOAD OR USE THE APP.<br><br>Microsoft grants you a limited, nontransferable license to use this app and the content provided in this app solely for your personal, non-commercial use, and solely for the purposes stated within this app.<br><br>You may not use the app in any manner that violates others' privacy, publicity, or other intellectual property rights, or that is fraudulent or unlawful.<br><br>You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app.<br><br>THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DAMAGES WHATSOEVER ASSOCIATED WITH USE OF THE APP, INCLUDING ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, OR INFORMATION AVAILABLE FROM THE APP.<br></p>
+    </div>
+  <div class="clear"></div>
   </div>
-</footer>
-
-<div class="legal-text" style="display:none;">
-  <p>This app is © 2012 Microsoft Corporation.  All rights reserved. <br><br>BY DOWNLOADING OR USING THE APP, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT DOWNLOAD OR USE THE APP.<br><br>Microsoft grants you a limited, nontransferable license to use this app and the content provided in this app solely for your personal, non-commercial use, and solely for the purposes stated within this app.<br><br>You may not use the app in any manner that violates others' privacy, publicity, or other intellectual property rights, or that is fraudulent or unlawful.<br><br>You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app.<br><br>THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DAMAGES WHATSOEVER ASSOCIATED WITH USE OF THE APP, INCLUDING ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, OR INFORMATION AVAILABLE FROM THE APP.<br></p>
 </div>
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
