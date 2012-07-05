@@ -24,9 +24,9 @@ $(function(){
 
  //  });
 
-  $('#videolist a:first-child').addClass('active');
+    $('#videolist a:first-child').addClass('active');
 
- $('#videolist a').live('click', function(e) {
+    $('#videolist a').live('click', function(e) {
     var click, data;
     e.preventDefault();
     click = $(this);
@@ -37,7 +37,7 @@ $(function(){
     $('#videolist a').removeClass('active');
     $(click).addClass('active');
 
-  });
+    });
   
 
 
@@ -53,6 +53,14 @@ $(function(){
         // });
          
     });
+
+    var pc_font_swap;
+    pc_font_swap = function() {
+      if (navigator.appVersion.indexOf("Win") !== -1) {
+        return $('body').addClass('pc');
+      }
+    };
+    return pc_font_swap();
 
 });
 
