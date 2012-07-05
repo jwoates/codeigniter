@@ -69,7 +69,7 @@ THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DA
       <li><a href="/mobile/event" data-prefetch="true" data-transition="slideup" class="events-link">XBOX EVENTS</a></li>
     </ul>
   </div><!-- /navbar -->
-  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="#" data-role="none" class="privacy">Privacy &amp; Cookies</a>.</p>
+  <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="http://privacy.microsoft.com/en-us/default.mspx" data-role="none" class="privacy">Privacy &amp; Cookies</a>.</p>
 </div><!-- /footer -->
 
 <script type="text/javascript" src="/resources/js/jquery.nivo.slider.pack.js?<?php echo rand(); ?>"></script> 
