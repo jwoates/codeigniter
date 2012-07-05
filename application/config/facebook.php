@@ -1,5 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+# Add application to page link
+# set with live app settings (app id and redirect)
+# http://www.facebook.com/dialog/pagetab?app_id=329330017143635&next=https://sdcc.azurewebsites.net/
+
+
 /* jackson */
 if($_SERVER['HTTP_HOST'] == '10.1.10.249')
 {
