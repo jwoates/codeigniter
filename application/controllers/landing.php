@@ -67,11 +67,15 @@ class Landing extends CI_Controller {
     
     private function getTwitterFeed($url=null)
     {
+        /*
         if ( ! $get_twitter = $this->cache->get('get_twitter'))
         {
             $get_twitter = file_get_contents($this->config->item('tw_feed_url'));
         }
         $this->cache->save('get_twitter', $get_twitter, 600);
+        */
+        # porking cache to get latest twitter all the time
+        $get_twitter = file_get_contents($this->config->item('tw_feed_url'));
         return json_decode($get_twitter);        
     }
     
