@@ -83,11 +83,15 @@ class Mobile extends CI_Controller {
     
     private function getApprovedTwitterFeed($url=null)
     {
+        # no more twitter cache
+        /*
         if ( ! $get_approved_twitter = $this->cache->get('get_approved_twitter'))
         {
             $get_approved_twitter = file_get_contents('http://feeds.tidytweet.com/client/sdcc/feed/roundhousedemo/legacy.atom');
         }
         $this->cache->save('get_approved_twitter', $get_approved_twitter, 600);
+        */
+        $get_approved_twitter = file_get_contents('http://feeds.tidytweet.com/client/sdcc/feed/roundhousedemo/legacy.atom');
         return simplexml_load_string($get_approved_twitter); 
 
     }
