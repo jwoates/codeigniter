@@ -1,5 +1,9 @@
 <?php
 
+# set p3p headers for IE iframe cookie fix
+
+header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
