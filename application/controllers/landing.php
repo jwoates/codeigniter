@@ -9,7 +9,6 @@ class Landing extends CI_Controller {
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
         # no sneaking in
-        $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
         if($this->session->userdata('user_age') == 'denied')
         {
             redirect('restricted/age');
@@ -21,7 +20,6 @@ class Landing extends CI_Controller {
 
     function index(){
         
-        $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
 
         /* have you authenticated? */
         /*
@@ -54,6 +52,7 @@ class Landing extends CI_Controller {
         $data['twitter_approved_feed']      = $this->getApprovedTwitterFeed();
 
         $data['yield'] = $this->load->view('facebook/landing',$data, TRUE);
+        header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
         if($this->agent->is_mobile() == true)
         {
             $this->load->view('layout/mobile', $data);
