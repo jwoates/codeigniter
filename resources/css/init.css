@@ -733,6 +733,7 @@ footer p.footer a:hover {
 .pc h3,
 .pc h4,
 .pc select,
-.pc .tweet p.name {
+.pc .tweet p.name,
+.pc #shareBtn {
   font-weight: bold;
 }
