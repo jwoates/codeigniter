@@ -4,7 +4,7 @@
 
 <div class="gate-keeper"> 
 <section class="age-gate">
-    <h1>Enter your date of birth:</h1>
+    <h1 class="ager">Enter your date of birth:</h1>
 
 <?php
     if(isset($message) && $message != null){
@@ -38,13 +38,24 @@
         'value' => 'ENTER',
         'data-role' => 'none'
       );
-      
-      echo form_dropdown('month', $month);
-      echo form_dropdown('day', $day);
-      echo form_dropdown('year', $year);
-      
+    
     ?>
-    <div>
+
+<div id="select">
+    <div class="select">
+      <?php echo form_dropdown('month', $month); ?>
+    </div>
+
+    <div class="select">
+    <?php  echo form_dropdown('day', $day); ?>
+    </div>
+
+    <div class="select year">
+    <?php  echo form_dropdown('year', $year); ?>
+    </div>
+</div>    
+    
+    <div style="clear:both;">
       <?php
       echo form_submit($submit);
       ?>

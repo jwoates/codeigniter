@@ -1,9 +1,11 @@
 ::selection{ background-color: #E13300; color: white; }
 ::moz-selection{ background-color: #E13300; color: white; }
 ::webkit-selection{ background-color: #E13300; color: white; }
-* {
-  outline: none;
-}
+:focus { outline:none; }
+::-moz-focus-inner { border:0; }
+::-webkit-focus-inner { border:0; }
+* { outline: none; }
+
 body {
   background-color: #fff;
   color: #5c5c5c;
@@ -18,6 +20,7 @@ body, p, h1, h2, h3, h4 { margin:0; padding:0; }
 
 p { }
 h1 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
+h1.ager { font: 24px/35px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; margin-left: -14px; }
 h2 { font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; color:#fff; }
 h3 { font: 12px/12px 'Rockwell', Arial, "MS Trebuchet", sans-serif; color:#848589; font-weight: bold; }
 h4 { }
@@ -72,18 +75,39 @@ header.global-header {
     border: 1px solid #c2d6ad;
     width: 56px;
   }
+  #select {
+    width: 290px;
+    margin: 0 auto;
+    clear: both;
+    .select {
+      width: 75px;
+      float: left;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+    .select.year {
+      width: 110px;
+      select {
+        padding-left: 30px;
+      }
+    }
+
+  }
   select {
     border: 0;
     background-color: #fff;
     font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif; 
     color: #848589;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     -webkit-border-radius: 0px;
     appearance: none;
     cursor: pointer;
     outline: none;
     margin-right: 10px;
-    padding:10px 30px 10px 30px;
+    padding:10px 30px 10px 22px;
+    width: 160px;
   }
 
   #submit {
@@ -335,6 +359,8 @@ footer {
   p.footer {
     font-size: 12px;
     width: 450px;
+    font-family: 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+
     a {
     color: #8ec754;
     text-decoration: none;
@@ -343,6 +369,12 @@ footer {
   }
   }
 }
+
+
+/*** CUSTOM CLASSES ***/
+.pc, .pc a, .pc #container, .pc p.footer, .pc h1, .pc h2, .pc h3, .pc h4, .pc select, .pc li, .pc li span, .pc .tweet p { font-family: Arial, "MS Trebuchet", sans-serif !important; }
+.pc h1, .pc h2, .pc h3, .pc h4, .pc select, .pc .tweet p.name { font-weight: bold; }
+
 
 
 

@@ -310,6 +310,15 @@ body:after {
   background-color: #E13300;
   color: white;
 }
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+::-webkit-focus-inner {
+  border: 0;
+}
 * {
   outline: none;
 }
@@ -336,6 +345,11 @@ h4 {
 h1 {
   font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   color: #fff;
+}
+h1.ager {
+  font: 24px/35px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #fff;
+  margin-left: -14px;
 }
 h2 {
   font: 18px/30px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
@@ -394,18 +408,38 @@ header.global-header {
   border: 1px solid #c2d6ad;
   width: 56px;
 }
+.age-gate #select {
+  width: 290px;
+  margin: 0 auto;
+  clear: both;
+}
+.age-gate #select .select {
+  width: 75px;
+  float: left;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.age-gate #select .select.year {
+  width: 110px;
+}
+.age-gate #select .select.year select {
+  padding-left: 30px;
+}
 .age-gate select {
   border: 0;
   background-color: #fff;
   font: 18px/23px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
   color: #848589;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-border-radius: 0px;
   appearance: none;
   cursor: pointer;
   outline: none;
   margin-right: 10px;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px 10px 22px;
+  width: 160px;
 }
 .age-gate #submit {
   border: 1px solid #5b5b5b;
@@ -669,6 +703,7 @@ footer {
 footer p.footer {
   font-size: 12px;
   width: 450px;
+  font-family: 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
 }
 footer p.footer a {
   color: #8ec754;
@@ -677,4 +712,27 @@ footer p.footer a {
 }
 footer p.footer a:hover {
   color: #2B9646;
+}
+/*** CUSTOM CLASSES ***/
+.pc,
+.pc a,
+.pc #container,
+.pc p.footer,
+.pc h1,
+.pc h2,
+.pc h3,
+.pc h4,
+.pc select,
+.pc li,
+.pc li span,
+.pc .tweet p {
+  font-family: Arial, "MS Trebuchet", sans-serif !important;
+}
+.pc h1,
+.pc h2,
+.pc h3,
+.pc h4,
+.pc select,
+.pc .tweet p.name {
+  font-weight: bold;
 }
