@@ -13,6 +13,7 @@ class Restricted extends CI_Controller {
     }
     function age()
     {
-        echo "you are too young";
+        $data['yield'] = $this->load->view('facebook/restricted',null, TRUE);
+        $this->load->view('layout/general', $data);
     }
 }
