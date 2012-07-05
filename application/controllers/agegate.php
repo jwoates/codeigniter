@@ -7,6 +7,7 @@ class Agegate extends CI_Controller {
         parent::__construct();
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
         $this->load->helper('form');
+        $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
     }
 
     function index()
@@ -33,8 +34,10 @@ class Agegate extends CI_Controller {
         $data['yield'] = $this->load->view('facebook/agegate',$data, TRUE);
         if($this->agent->is_mobile() == true)
         {
+            $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
             $this->load->view('layout/mobile', $data);
         }else{
+            $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
             $this->load->view('layout/general', $data);
         }
     }
@@ -53,6 +56,7 @@ class Agegate extends CI_Controller {
         $age = birthday("$day/$month/$year");
         
         if ($age < 18){
+            $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
             $this->session->set_userdata('user_age', 'denied');
             redirect('core');
             
@@ -62,7 +66,8 @@ class Agegate extends CI_Controller {
             {
                 redirect('mobile/twitter');
             }else{
-                redirect('landing');
+                $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
+                redirect('landing','location');
             }            
         }
     }

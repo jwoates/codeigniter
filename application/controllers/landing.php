@@ -8,8 +8,8 @@ class Landing extends CI_Controller {
         $this->load->config('twitter');
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-
         # no sneaking in
+        $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
         if($this->session->userdata('user_age') == 'denied')
         {
             redirect('restricted/age');
@@ -21,6 +21,7 @@ class Landing extends CI_Controller {
 
     function index(){
         
+        $this->output->set_content_type('P3P: CP="CAO PSA OUR"');
 
         /* have you authenticated? */
         /*

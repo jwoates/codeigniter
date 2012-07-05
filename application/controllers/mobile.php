@@ -9,7 +9,6 @@ class Mobile extends CI_Controller {
         $this->load->library('zend');
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
         # $this->load->model('Facebook_model');
-
         # no sneaking in
         if($this->session->userdata('user_age') == 'denied')
         {
