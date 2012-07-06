@@ -6,11 +6,12 @@ class Core extends CI_Controller {
         #$this->load->model('Facebook_model');
         header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
         $this->session->set_userdata('started', true);
+        $this->load->library('user_agent');
     }
     function index()
     {
         # check if safari, start TLD redirect loop
-        if($this->session->userdata('safari') != true)
+        if($this->session->userdata('safari') != true && $this->agent->is_browser('Safari'))
         {
             if ($this->agent->is_browser('Safari'))
             {
