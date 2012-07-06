@@ -12,7 +12,7 @@ class Core extends CI_Controller {
         # check if safari, start TLD redirect loop
         if($this->session->userdata('safari') != true)
         {
-            if ($this->agent->is_browser('Chrome'))
+            if ($this->agent->is_browser('Safari'))
             {
                 $this->load->view('redirect/index');
             }        
