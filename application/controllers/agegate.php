@@ -12,7 +12,6 @@ class Agegate extends CI_Controller {
 
     function index()
     {
-
         $data['message'] = null;
         if($this->session->userdata('user_age') == 'approved')
         {
@@ -44,6 +43,7 @@ class Agegate extends CI_Controller {
     function authenticate()
     {   
         $this->load->helper('birthday_helper');
+        $this->load->library('user_agent');
 
         $data = array();
         
@@ -57,7 +57,7 @@ class Agegate extends CI_Controller {
         if ($age < 18){
             header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
             $this->session->set_userdata('user_age', 'denied');
-            redirect('core');
+            redirect('restricted/age');
             
         }else{
             $this->session->set_userdata('user_age', 'approved');
