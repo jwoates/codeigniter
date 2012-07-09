@@ -141,6 +141,35 @@ header.global-header {
     }
   }
   // Tweets
+  .tweet {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px;
+    position: relative;
+
+    img {
+      position: absolute;
+      float: left;
+      overflow: hidden;
+      top: 10px;
+      left: 10px;
+    }
+    p {
+      padding-left: 70px;
+      color: #343434;
+      a {
+        color: #8ec754;
+        text-decoration: none;
+        &:hover { color: #2B9646;}
+        p {
+          font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif; color: #848589;
+        }
+      }
+    }
+    p.name {
+      font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+      color: #2b3030; 
+    }
+  }
   li {
     overflow: hidden;
     position: relative;
@@ -153,7 +182,7 @@ header.global-header {
       top: 10px;
       left: 10px;
     }
-    .ui-li-desc {
+    .p {
       padding-left: 70px;
     }
     p.name {

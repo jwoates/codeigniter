@@ -71,7 +71,60 @@ THE APP IS LICENSED "AS-IS" AND IN NO EVENT SHALL MICROSOFT BE LIABLE FOR ANY DA
   </div><!-- /navbar -->
   <p class="copyright-nav">The content contained in this app is &copy; 2012 Microsoft Corporation. <br />All rights reserved. See <a href="#" target="_blank" data-role="none" class="terms">Terms of Use</a> and <a href="http://privacy.microsoft.com/en-us/default.mspx" data-role="none" class="privacy">Privacy &amp; Cookies</a>.</p>
 </div><!-- /footer -->
+<script type="text/javascript">
+  $(function(){
+    var target = ($('#twitterLoader') != 'undefined') ? $('#twitterLoader') : false;
+    if(target === false) return false;
+    requestTweets(target, true);
+    var seconds = 5;
 
+    setInterval(function(){    
+      requestTweets(target, false);
+    }, seconds * 1000)        
+
+});
+function requestTweets(target, flag){
+  $.ajax({
+    url: "/landing/requestNewTweets",
+    context: document.body
+  }).done(function(data) { 
+    populateTweets(data,target, flag);
+  });
+}
+function populateTweets(data, target, flag){
+  $.each(data, function(index, value) { 
+    console.log(value);
+    if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
+      var content = '<div class="tweet" id="'+value.id+'"><img alt="" src="'+value.link[1]['@attributes'].href+'" width="48" height="48" /><p class="name">'+value.author.name+'</p><p>'+Linkify(value.title)+'</p></div>'
+      if(flag == true){
+        $(target).append(content);
+      }else{
+        $(target).prepend(content);
+      }
+    }
+  });
+  $('#twitterLoader').jScrollPane();
+  $('#twitterLoader > div').load(function(){
+    $('#twitterLoader').data('jsp').reinitialise();
+  });
+
+}
+
+function Linkify(text) {
+    text = text.replace(/(https?:\/\/\S+)/gi, function (s) {
+        return '<a href="' + s + '">' + s + '</a>';
+    });
+
+    text = text.replace(/(^|)@(\w+)/gi, function (s) {
+        return '<a href="http://twitter.com/' + s + '">' + s + '</a>';
+    });
+
+    text = text.replace(/(^|)#(\w+)/gi, function (s) {
+        return '<a href="http://search.twitter.com/search?q=' + s.replace(/#/,'%23') + '">' + s + '</a>';
+     });
+    return text;
+}
+</script>
 <script type="text/javascript" src="/resources/js/jquery.nivo.slider.pack.js?<?php echo rand(); ?>"></script> 
 <script type="text/javascript">
   $(document).ready(function() {

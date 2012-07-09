@@ -179,6 +179,37 @@ header.global-header {
 .twitter-section header aside span a:hover {
   color: #d8d8d8;
 }
+.twitter-section .tweet {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px;
+  position: relative;
+}
+.twitter-section .tweet img {
+  position: absolute;
+  float: left;
+  overflow: hidden;
+  top: 10px;
+  left: 10px;
+}
+.twitter-section .tweet p {
+  padding-left: 70px;
+  color: #343434;
+}
+.twitter-section .tweet p a {
+  color: #8ec754;
+  text-decoration: none;
+}
+.twitter-section .tweet p a:hover {
+  color: #2B9646;
+}
+.twitter-section .tweet p a p {
+  font: 13px/18px 'Segoe Regular', Arial, "MS Trebuchet", sans-serif;
+  color: #848589;
+}
+.twitter-section .tweet p.name {
+  font: 13px/20px 'Segoe Bold', Arial, "MS Trebuchet", sans-serif;
+  color: #2b3030;
+}
 .twitter-section li {
   overflow: hidden;
   position: relative;
@@ -192,7 +223,7 @@ header.global-header {
   top: 10px;
   left: 10px;
 }
-.twitter-section li .ui-li-desc {
+.twitter-section li .p {
   padding-left: 70px;
 }
 .twitter-section li p.name {

@@ -521,7 +521,7 @@ header.global-header {
   filter: alpha(opacity= 100 );
 }
 /* Twitter Section */
-#twitterList {
+#twitterLoader {
   height: 560px;
 }
 .twitter-section {
