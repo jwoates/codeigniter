@@ -67,11 +67,6 @@ class Landing extends CI_Controller {
         
     }
 
-  
-    /* ********************************************************************************************
-    PRIVATE FUNCTIONS
-    ******************************************************************************************** */
-
     public function requestNewTweets(){
         $tweets = $data['twitter_approved_feed'] = $this->getApprovedTwitterFeed();
         #var_dump($tweets[0]->entry);
@@ -90,9 +85,13 @@ class Landing extends CI_Controller {
         }
         $this->cache->save('tweet_array', $tweet_array, 10);
         */
-
         $this->output->set_content_type('application/json')->set_output(json_encode($tweet_array));        
     }
+  
+    /* ********************************************************************************************
+    PRIVATE FUNCTIONS
+    ******************************************************************************************** */
+
     
     private function getTwitterFeed($url=null)
     {

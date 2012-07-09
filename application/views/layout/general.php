@@ -99,7 +99,7 @@
     </script>
   <script>
     function resize() {
-      //FB.Canvas.setAutoResize();
+      FB.Canvas.setAutoResize();
     }
   </script>
   <script type="text/javascript" src="/resources/js/application.js?<?php echo rand(); ?>"></script> 
@@ -128,16 +128,13 @@ function requestTweets(target, flag){
 }
 function populateTweets(data, target, flag){
   $.each(data, function(index, value) { 
-    console.log(flag);
     if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
-      var content = '<div style="font-size:10px;border:1px dotted #ccc; margin:4px;padding:4px;" id="'+value.id+'"><span>'+value.author.name+'</span><p>'+value.title+'</p></div>'
+      var content = '<div style="font-size:10px;border:1px dotted #ccc; margin:4px;padding:4px;" id="'+value.id+'"><span>'+value.author.name+'</span><p>'+value.link[0]+'</p></div>'
       if(flag == true){
         $(target).append(content);
       }else{
         $(target).prepend(content);
       }
-    }else{
-      console.log('//')
     }
   });
 }
