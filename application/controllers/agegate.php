@@ -7,11 +7,11 @@ class Agegate extends CI_Controller {
         parent::__construct();
         $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
         $this->load->helper('form');
+        header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
     }
 
     function index()
     {
-
         $data['message'] = null;
         if($this->session->userdata('user_age') == 'approved')
         {
@@ -35,6 +35,7 @@ class Agegate extends CI_Controller {
         {
             $this->load->view('layout/mobile', $data);
         }else{
+            header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
             $this->load->view('layout/general', $data);
         }
     }
@@ -42,6 +43,7 @@ class Agegate extends CI_Controller {
     function authenticate()
     {   
         $this->load->helper('birthday_helper');
+        $this->load->library('user_agent');
 
         $data = array();
         
@@ -53,8 +55,9 @@ class Agegate extends CI_Controller {
         $age = birthday("$day/$month/$year");
         
         if ($age < 18){
+            header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
             $this->session->set_userdata('user_age', 'denied');
-            redirect('core');
+            redirect('restricted/age');
             
         }else{
             $this->session->set_userdata('user_age', 'approved');
@@ -62,7 +65,8 @@ class Agegate extends CI_Controller {
             {
                 redirect('mobile/twitter');
             }else{
-                redirect('landing');
+                header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+                redirect('landing','location');
             }            
         }
     }
