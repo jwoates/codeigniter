@@ -60,10 +60,39 @@ class Landing extends CI_Controller {
             $this->load->view('layout/general', $data);
         }
     }
+    public function loadNewTweets(){
+        header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+        $data['yield'] = $this->load->view('facebook/tweetload',null, TRUE);
+        $this->load->view('layout/general', $data);
+        
+    }
+
   
     /* ********************************************************************************************
     PRIVATE FUNCTIONS
     ******************************************************************************************** */
+
+    public function requestNewTweets(){
+        $tweets = $data['twitter_approved_feed'] = $this->getApprovedTwitterFeed();
+        #var_dump($tweets[0]->entry);
+
+        $tweets = $tweets->entry;
+        $tweet_array = array();
+        foreach ($tweets as $key => $value) {
+            $value->id = "tw_" . str_replace("tag:feeds.tidytweet.com,2005:", "", $value->id);
+            array_push($tweet_array, $value);
+        }
+        #var_dump($tweet_array);
+        /*
+        if ( ! $tweet_array = $this->cache->get('tweet_array'))
+        {
+            $get_twitter = file_get_contents($this->config->item('tw_feed_url'));
+        }
+        $this->cache->save('tweet_array', $tweet_array, 10);
+        */
+
+        $this->output->set_content_type('application/json')->set_output(json_encode($tweet_array));        
+    }
     
     private function getTwitterFeed($url=null)
     {
@@ -74,7 +103,6 @@ class Landing extends CI_Controller {
         $this->cache->save('get_twitter', $get_twitter, 600);
         return json_decode($get_twitter);        
     }
-    
     private function getApprovedTwitterFeed($url=null)
     {
         # removing twitter cache
