@@ -69,6 +69,11 @@
     }, seconds * 1000)        
 
 });
+function refreshNav() {
+    var pane = $('#twitterLoader');
+    var api = pane.data('jsp');
+    api.reinitialise();
+}
 function requestTweets(target, flag){
   $.ajax({
     url: "/landing/requestNewTweets",
@@ -76,8 +81,11 @@ function requestTweets(target, flag){
     context: document.body
   }).done(function(data) { 
     populateTweets(data,target, flag);
+    refreshNav();
+
   });
 }
+
 function populateTweets(data, target, flag){
   $.each(data, function(index, value) { 
     if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
@@ -85,15 +93,11 @@ function populateTweets(data, target, flag){
       if(flag == true){
         $(target).append(content);
       }else{
-        $(target).prepend(content);
+        $('#twitterLoader .jspPane').prepend(content);
       }
     }
   });
   $('#twitterLoader').jScrollPane();
-  $('#twitterLoader > div').load(function(){
-    $('#twitterLoader').data('jsp').reinitialise();
-  });
-
 }
 
 function Linkify(text) {
