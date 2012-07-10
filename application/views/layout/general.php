@@ -69,31 +69,35 @@
     }, seconds * 1000)        
 
 });
+function refreshNav() {
+    var pane = $('#twitterLoader');
+    var api = pane.data('jsp');
+    api.reinitialise();
+}
 function requestTweets(target, flag){
   $.ajax({
     url: "/landing/requestNewTweets",
     context: document.body
   }).done(function(data) { 
     populateTweets(data,target, flag);
+    refreshNav();
+
   });
 }
+
 function populateTweets(data, target, flag){
   $.each(data, function(index, value) { 
-    console.log(value);
+    
     if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
       var content = '<div class="tweet" id="'+value.id+'"><img alt="" src="'+value.link[1]['@attributes'].href+'" width="48" height="48" /><p class="name">'+value.author.name+'</p><p>'+Linkify(value.title)+'</p></div>'
       if(flag == true){
         $(target).append(content);
       }else{
-        $(target).prepend(content);
+        $('#twitterLoader .jspPane').prepend(content);
       }
     }
   });
   $('#twitterLoader').jScrollPane();
-  $('#twitterLoader > div').load(function(){
-    $('#twitterLoader').data('jsp').reinitialise();
-  });
-
 }
 
 function Linkify(text) {
