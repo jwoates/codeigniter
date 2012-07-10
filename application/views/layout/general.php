@@ -13,7 +13,7 @@
    <link href="/resources/css/jquery.jscrollpane.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
   <link href="/resources/css/init.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
   <link href="/resources/js/nivo-slider.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
- 
+ <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="/resources/js/modernizr.js"></script> 
   
 </head>
@@ -55,8 +55,63 @@
   </div>
 </div>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 <script src="//www.youtube.com/player_api" type="text/javascript" charset="utf-8" async="" defer=""></script>
+<script type="text/javascript">
+  $(function(){
+    var target = ($('#twitterLoader') != 'undefined') ? $('#twitterLoader') : false;
+    if(target === false) return false;
+    requestTweets(target, true);
+    var seconds = 5;
+
+    setInterval(function(){    
+      requestTweets(target, false);
+    }, seconds * 1000)        
+
+});
+function requestTweets(target, flag){
+  $.ajax({
+    url: "/landing/requestNewTweets",
+    cache:false,
+    context: document.body
+  }).done(function(data) { 
+    populateTweets(data,target, flag);
+  });
+}
+function populateTweets(data, target, flag){
+  $.each(data, function(index, value) { 
+    if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
+      var content = '<div class="tweet" id="'+value.id+'"><img alt="" src="'+value.link[1]['@attributes'].href+'" width="48" height="48" /><p class="name">'+value.author.name+'</p><p>'+Linkify(value.title)+'</p></div>'
+      if(flag == true){
+        $(target).append(content);
+      }else{
+        $(target).prepend(content);
+      }
+    }
+  });
+  $('#twitterLoader').jScrollPane();
+  $('#twitterLoader > div').load(function(){
+    $('#twitterLoader').data('jsp').reinitialise();
+  });
+
+}
+
+function Linkify(text) {
+    text = text.replace(/(https?:\/\/\S+)/gi, function (s) {
+        return '<a href="' + s + '">' + s + '</a>';
+    });
+
+    text = text.replace(/(^|)@(\w+)/gi, function (s) {
+        return '<a href="http://twitter.com/' + s + '">' + s + '</a>';
+    });
+
+    text = text.replace(/(^|)#(\w+)/gi, function (s) {
+        return '<a href="http://search.twitter.com/search?q=' + s.replace(/#/,'%23') + '">' + s + '</a>';
+     });
+    return text;
+}
+</script>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -83,11 +138,6 @@
           directionNavHide: false
         });
 
-        $('#twitterList').jScrollPane();
-        $('#twitterList p').load(function(){
-          $('#twitterList').data('jsp').reinitialise();
-        });
-
         $('#videolist').jScrollPane();
         $('#videolist img').load(function(){
           $('#videolist').data('jsp').reinitialise();
@@ -106,38 +156,6 @@
   <script type="text/javascript" src="/resources/js/jquery.nivo.slider.pack.js?<?php echo rand(); ?>"></script> 
   <script type="text/javascript" src="/resources/js/jquery.jscrollpane.min.js"></script> 
   <script type="text/javascript" src="/resources/js/jquery.mousewheel.js"></script> 
-<script type="text/javascript">
-  $(function(){
-    var target = ($('#twitterLoader') != 'undefined') ? $('#twitterLoader') : false;
-    if(target === false) return false;
-    requestTweets(target, true);
-    var seconds = 5;
 
-    setInterval(function(){    
-      requestTweets(target, false);
-    }, seconds * 1000)        
-
-});
-function requestTweets(target, flag){
-  $.ajax({
-    url: "/landing/requestNewTweets",
-    context: document.body
-  }).done(function(data) { 
-    populateTweets(data,target, flag);
-  });
-}
-function populateTweets(data, target, flag){
-  $.each(data, function(index, value) { 
-    if ( ! document.getElementById(value.id) || document.getElementById(value.id) == null){
-      var content = '<div style="font-size:10px;border:1px dotted #ccc; margin:4px;padding:4px;" id="'+value.id+'"><span>'+value.author.name+'</span><p>'+value.link[0]+'</p></div>'
-      if(flag == true){
-        $(target).append(content);
-      }else{
-        $(target).prepend(content);
-      }
-    }
-  });
-}
-</script>
 </body>
 </html>

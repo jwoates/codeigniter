@@ -11,6 +11,7 @@ class Core extends CI_Controller {
     function index()
     {
         # check if safari, start TLD redirect loop
+        
         if($this->session->userdata('safari') != true && $this->agent->is_browser('Safari'))
         {
             if ($this->agent->is_browser('Safari'))
@@ -20,28 +21,15 @@ class Core extends CI_Controller {
         }else{
             redirect('agegate');
         }
-        /*
-        $fb_data = $this->session->userdata('fb_data'); // This array contains all the user FB information
-        if((!$fb_data['uid']) or (!$fb_data['me']))
+    }
+    function tab()
+    {
+        if ( ! $this->agent->is_mobile())
         {
-            $data['fb_data'] = $fb_data;
-            $data['yield'] = $this->load->view('facebook/core',$data, TRUE);
-            if($this->agent->is_mobile() == true)
-            {
-                $this->load->view('layout/mobile', $data);
-            }else{
-                $this->load->view('layout/general', $data);
-            }
-        }else{
-            $data['fb_data'] = $fb_data;
-            if($this->session->userdata('user_age') == 'denied')
-            {
-                redirect('restricted/age');
-                exit;
-            }            
-            redirect('agegate');
+            $this->load->view('redirect/tab');
+
         }
-        */
+
     }
     function destroy()
     {
