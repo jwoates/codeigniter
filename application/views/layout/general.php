@@ -10,12 +10,14 @@
   <meta property="og:description" content="Your exclusive pass to San Diego Comic-Con. Stay in the know with videos, photos, live tweets and event access all from Xbox." />
 
   <link href="https://font-box.heroku.com/segoe.css" rel="stylesheet" type="text/css" media="screen" />
-   <link href="/resources/css/jquery.jscrollpane.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
+  <link href="/resources/css/jquery.jscrollpane.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
   <link href="/resources/css/init.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
   <link href="/resources/js/nivo-slider.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="/resources/js/modernizr.js"></script> 
-  
+  <!--[if IE 9]>
+    <link href="/resources/css/ie9.css?<?php echo rand(); ?>" rel="stylesheet" type="text/css" media="screen" />
+  <![endif]-->
 </head>
   <body onload="resize();" >
   <div id="fb-root"></div>
@@ -160,6 +162,19 @@ function Linkify(text) {
   <script type="text/javascript" src="/resources/js/jquery.nivo.slider.pack.js?<?php echo rand(); ?>"></script> 
   <script type="text/javascript" src="/resources/js/jquery.jscrollpane.min.js"></script> 
   <script type="text/javascript" src="/resources/js/jquery.mousewheel.js"></script> 
+  
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33314526-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>
