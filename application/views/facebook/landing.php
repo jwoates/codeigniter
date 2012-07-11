@@ -79,9 +79,9 @@
 
   
   <div class="slider-wrapper theme-default">
-      <div class="comingsoon"><h2>Photos coming soon!<br />Check back here for SDCC 2012 as they become available.</h2></div>
+      <!-- div class="comingsoon"><h2>Photos coming soon!<br />Check back here for SDCC 2012 as they become available.</h2></div> -->
 
-   <!-- <div id="slider" class="nivoSlider">
+   <div id="slider" class="nivoSlider">
     <?php
       $photos =  $fb_photos;
       foreach ($photos->data as $key=>$value) {
@@ -89,7 +89,7 @@
         echo '<img src="' . $value->source . '" />';
       }
     ?>
-    </div> -->
+    </div>
   </div>
 
   </section>

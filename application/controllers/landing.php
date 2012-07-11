@@ -123,13 +123,14 @@ class Landing extends CI_Controller {
             {
             switch ($type) {
                 case 'live':
-                    $get_photos = file_get_contents('https://graph.facebook.com/10150575545216023/photos');
+                    #$get_photos = file_get_contents('https://graph.facebook.com/10150575545216023/photos');
+                    $get_photos = file_get_contents('https://graph.facebook.com/10151068984886023/photos');
                     break;
                 case 'api':
                     $get_photos = file_get_contents('http://rhapi.com/facebook/photos/10150575545216023/?type=json&limit=10');
                     break;
                 case 'test':
-                    $get_photos = 'fuck';
+                    $get_photos = 'fudge';
                     break;
                 
                 default:
